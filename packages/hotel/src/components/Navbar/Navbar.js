@@ -33,14 +33,12 @@ const Navbar = ({
   return (
     <NavbarWrapper className={addAllClasses.join(' ')}>
       <Container>
-        {logo || searchVisibility ? (
+        
           <LogoArea>
             {logo}
-            {!searchVisibility && location.pathname === '/'
-              ? null
-              : searchComponent}
+            {searchComponent}
           </LogoArea>
-        ) : null}
+        
         <MenuArea>
           {navMenu && (
             <MenuWrapper className="main_menu">{navMenu}</MenuWrapper>

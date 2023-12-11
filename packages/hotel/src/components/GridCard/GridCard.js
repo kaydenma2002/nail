@@ -11,12 +11,14 @@ import GridCardWrapper, {
   MetaWrapper,
   buttonStyle,
 } from './GridCard.style';
+import { width } from 'styled-system';
 
 const GridCard = ({
   className,
   favorite,
-  location,
-  title,
+  street_address,
+  image,
+  name,
   price,
   children,
 }) => {
@@ -30,9 +32,9 @@ const GridCard = ({
 
       const labels = [];
 
-      for(let i = 0; i < numberOfButtons; i++) {
+      for (let i = 0; i < numberOfButtons; i++) {
         const startHour = currentHour + (currentMinutes > startTime ? 1 : 0);
-        const hour = startHour + Math.floor(i * interval / 60);
+        const hour = startHour + Math.floor((i * interval) / 60);
         const minutes = (startHour * 60 + startTime + i * interval) % 60;
 
         labels.push(`${hour}:${String(minutes).padStart(2, '0')}`);
@@ -50,16 +52,20 @@ const GridCard = ({
 
   return (
     <GridCardWrapper className={`grid_card ${classes}`.trim()}>
-      <ImageWrapper className="media_wrapper">{children}</ImageWrapper>
+      
       <ContentWrapper className="content_wrapper">
-        {location && <LocationArea>{location}</LocationArea>}
-        {title && <TitleArea>{title}</TitleArea>}
+        <div>{image && <img  src={image}></img>}</div>
+        {street_address && <LocationArea>{street_address}</LocationArea>}
+        {name && <TitleArea>{name}</TitleArea>}
 
         <MetaWrapper className="meta_wrapper">
           {price && <PriceArea className="price">{price}</PriceArea>}
         </MetaWrapper>
 
-        <div className='button-container' style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div
+          className="button-container"
+          style={{ display: 'flex', justifyContent: 'space-between' }}
+        >
           {timeLabels.map((label, index) => (
             <Button key={index} type="primary" style={buttonStyle}>
               {label}
@@ -75,9 +81,9 @@ const GridCard = ({
 
 GridCard.propTypes = {
   className: PropTypes.string,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  name: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   price: PropTypes.string,
-  location: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  street_address: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };
 
 export default GridCard;

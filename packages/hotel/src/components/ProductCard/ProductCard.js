@@ -35,12 +35,12 @@ const responsive = {
 };
 
 const PostGrid = ({
-  title,
+  name,
   rating,
-  location,
+  street_address,
   price,
   ratingCount,
-  gallery,
+  
   slug,
   link,
 }) => {
@@ -54,8 +54,9 @@ const PostGrid = ({
           }}
         />
       }
-      location={location.formattedAddress}
-      title={<TextLink link={`${link}/${slug}`} content={title} />}
+      image='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+      street_address={street_address}
+      name={<TextLink link={`${link}/${slug}`} content={name} />}
       price={`$${price}/Night - Free Cancellation`}
       rating={<Rating rating={rating} ratingCount={ratingCount} type="bulk" />}
       viewDetailsBtn={
@@ -66,38 +67,9 @@ const PostGrid = ({
         />
       }
     >
-      <Carousel
-        additionalTransfrom={0}
-        arrows
-        autoPlaySpeed={3000}
-        containerClass="container"
-        dotListClass=""
-        draggable
-        focusOnSelect={false}
-        infinite
-        itemClass=""
-        renderDotsOutside={false}
-        responsive={responsive}
-        showDots={true}
-        sliderClass=""
-        slidesToSlide={1}
-      >
-        {gallery.map(({ url, title }, index) => (
-          <img
-            src={url}
-            alt={title}
-            key={index}
-            draggable={false}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              position: 'relative',
-            }}
-          />
-        ))}
-      </Carousel>
+      
     </GridCard>
+    
   );
 };
 

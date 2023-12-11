@@ -21,7 +21,7 @@ const HotelMapMarkerCluster = ({ location, clusterer }) => {
         lng: parseFloat(item.location.lng),
         title: item.title,
         thumbUrl: item.image.thumb_url,
-        formattedAddress: item.location.formattedAddress,
+        formattedAddress: item.location?.formattedAddress,
         price: item.price,
         rating: item.rating,
         ratingCount: item.ratingCount,

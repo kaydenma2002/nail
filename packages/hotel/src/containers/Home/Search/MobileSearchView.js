@@ -38,7 +38,7 @@ const FilterDrawer = ({ history, location }) => {
   const [propertyType, setPropertyType] = useState(searchParams.property || []);
   const [searchDate, setSearchDate] = useState(
     searchParams.date_range || {
-      setReservationDate: null,
+      setStartDate: null,
       setEndDate: null,
     }
   );
@@ -104,7 +104,7 @@ const FilterDrawer = ({ history, location }) => {
   };
   const updateSearchDataFunc = (setDateValue) => {
     setSearchDate({
-      setReservationDate: setDateValue.setReservationDate,
+      setStartDate: setDateValue.setStartDate,
       setEndDate: setDateValue.setEndDate,
     });
   };
@@ -127,7 +127,7 @@ const FilterDrawer = ({ history, location }) => {
     setAmenities([]);
     setPropertyType([]);
     setSearchDate({
-      setReservationDate: null,
+      setStartDate: null,
       setEndDate: null,
     });
     setPrice({
@@ -191,11 +191,11 @@ const FilterDrawer = ({ history, location }) => {
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <DateRangePicker
-                  ReservationDateId="ReservationDate-id-mobile"
+                  StartDateId="StartDate-id-mobile"
                   endDateId="endDate-id-mobile"
-                  ReservationDate={
-                    searchDate.setReservationDate
-                      ? moment(searchDate.setReservationDate, 'MM-DD-YYYY')
+                  StartDate={
+                    searchDate.setStartDate
+                      ? moment(searchDate.setStartDate, 'MM-DD-YYYY')
                       : null
                   }
                   endDate={

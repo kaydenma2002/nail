@@ -19,7 +19,7 @@ const SingleMapDisplay = ({ location }) => {
     id: location?.id,
     title: location?.title,
     thumbUrl: location?.image.thumb_url,
-    formattedAddress: location?.location.formattedAddress,
+    formattedAddress: location?.location?.formattedAddress,
     price: location?.price,
     rating: location?.rating,
     ratingCount: location?.ratingCount,

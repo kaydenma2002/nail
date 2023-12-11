@@ -47,7 +47,7 @@ export default function Header() {
   const sidebarHandler = () => {
     setState(!state);
   };
-  const headerType = location.pathname === '/' ? 'transparent' : 'default';
+  const headerType = 'default';
 
   return (
     <HeaderWrapper>

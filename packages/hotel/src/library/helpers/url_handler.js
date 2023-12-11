@@ -103,10 +103,10 @@ export function getStateFromUrl(location) {
           const date = urlData[key] ? urlData[key] : null;
           if (date) {
             let splitDate = date ? date.split(',') : null;
-            let setStartDate = splitDate ? splitDate[0] : null;
+            let setReservationDate = splitDate ? splitDate[0] : null;
             let setEndDate = splitDate ? splitDate[1] : null;
             state[key] = date
-              ? { setStartDate: setStartDate, setEndDate: setEndDate }
+              ? { setReservationDate: setReservationDate, setEndDate: setEndDate }
               : null;
           }
           break;

@@ -15,14 +15,14 @@ const NavbarWrapper = styled.nav`
   }
 
   &.is_transparent {
-    background: transparent;
+   
     position: fixed;
     width: 100%;
     left: 0;
     top: 0;
     z-index: 999;
     border-bottom: 0;
-    background-color: transparent;
+    
     transition: all 0.3s ease-out;
 
     .ant-menu {
@@ -30,7 +30,7 @@ const NavbarWrapper = styled.nav`
 
       li {
         &.ant-menu-item-selected {
-          background-color: transparent;
+         
           a {
             color: ${themeGet('color.1', '#ffffff')};
             &.active {
@@ -202,7 +202,8 @@ export const MenuWrapper = styled.div`
       }
       &.ant-menu-item-selected,
       &.ant-menu-item-active {
-        background-color: transparent;
+        background-color: transparent !important;
+        
       }
 
       a {

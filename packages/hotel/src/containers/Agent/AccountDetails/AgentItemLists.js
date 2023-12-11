@@ -14,7 +14,7 @@ const AgentItemLists = () => {
       data={listed_post}
       loading={loading}
       limit={8}
-      totalItem={total.length}
+      totalItem={total?.length}
       columnWidth={[1 / 1, 1 / 2, 1 / 3, 1 / 4, 1 / 5, 1 / 6]}
       placeholder={<PostPlaceholder />}
       handleLoadMore={loadMoreData}

@@ -49,7 +49,7 @@ export default class ImageUploader extends React.Component {
           onChange={this.handleChange}
           className="image_uploader"
         >
-          {fileList.length >= 4 ? null : uploadButton}
+          {fileList?.length >= 4 ? null : uploadButton}
         </Dragger>
         <Modal open={previewVisible} footer={null} onCancel={this.handleCancel}>
           <img alt="example" style={{ width: '100%' }} src={previewImage} />

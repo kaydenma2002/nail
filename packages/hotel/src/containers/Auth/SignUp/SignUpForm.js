@@ -6,7 +6,7 @@ import { Input, Switch, Button } from 'antd';
 import FormControl from 'components/UI/FormControl/FormControl';
 import { AuthContext } from 'context/AuthProvider';
 import { FieldWrapper, SwitchWrapper, Label } from '../Auth.style';
-import axios from '../../../config/axios'
+import axios from '../../../config/axios';
 const SignUpForm = () => {
   const { signUp, loggedIn } = useContext(AuthContext);
   const {
@@ -20,14 +20,17 @@ const SignUpForm = () => {
   const password = watch('password');
   const confirmPassword = watch('confirmPassword');
   const onSubmit = (data) => {
-    axios.post("create-user", {
-      email: data.email,
-      password: data.password
-    }).then(res => {
-      signUp()
-    }).catch(err => {
-      console.log(err)
-    })
+    axios
+      .post('create-user', {
+        email: data.email,
+        password: data.password,
+      })
+      .then((res) => {
+        signUp();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   if (loggedIn) {
     return <Navigate to="/" replace={true} />;

@@ -55,7 +55,7 @@ export default class App extends React.Component {
             <p>{content}</p>
           </div>
           <div className="comment-rating">
-            {reviewRating && reviewRating.length !== 0
+            {reviewRating && reviewRating?.length !== 0
               ? reviewRating.map((singleReviewRating, i) => {
                   return (
                     <div className="rating-widget" key={i}>

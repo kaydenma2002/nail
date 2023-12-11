@@ -7,9 +7,8 @@ import FormControl from 'components/UI/FormControl/FormControl';
 import { AuthContext } from 'context/AuthProvider';
 import { FORGET_PASSWORD_PAGE } from 'settings/constant';
 import { FieldWrapper, SwitchWrapper, Label } from '../Auth.style';
-import axios from '../../../config/axios'
+import axios from '../../../config/axios';
 import SignIn from './SignIn';
-
 
 export default function SignInForm() {
   const { signIn, loggedIn } = useContext(AuthContext);
@@ -19,15 +18,18 @@ export default function SignInForm() {
     handleSubmit,
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data)
-    axios.post("/authenticate-user", {
-      email: data.email,
-      password: data.password
-    }).then(res => {
-      signIn()
-    }).catch(err => {
-      console.log(err)
-    })
+    console.log(data);
+    axios
+      .post('/authenticate-user', {
+        email: data.email,
+        password: data.password,
+      })
+      .then((res) => {
+        signIn(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   if (loggedIn) {
     return <Navigate to="/" replace={true} />;

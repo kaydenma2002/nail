@@ -29,7 +29,7 @@ class DateRangePickerBox extends Component {
   onDateChangeFunc = (date) => {
     const { dateFormat } = this.state;
     this.setState({ startDate: date });
-    if(date !== null) {
+    if (date !== null) {
       this.props.updateSearchData({
         setStartDate: date.format(dateFormat),
         setEndDate: null,
@@ -65,7 +65,7 @@ class DateRangePickerBox extends Component {
     // Add all classs to an array **************
     const addAllClasses = ['date_picker'];
     // className prop checking **************
-    if(className) {
+    if (className) {
       addAllClasses.push(className);
     }
 

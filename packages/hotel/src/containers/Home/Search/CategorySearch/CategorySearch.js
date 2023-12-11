@@ -12,7 +12,7 @@ import {
   calenderItem,
   getAmenities,
   getPropertyType,
-} from '../SearchParams';
+} from '../../../Listing/Search/SearchParams';
 import CategorySearchWrapper, {
   RoomGuestWrapper,
   ItemWrapper,
@@ -45,17 +45,19 @@ const CategorySearch = ({ location }) => {
   const { amenities, property, date_range, price, room, guest } = state;
   const [countRoom, setRoom] = useState(room);
   const [countGuest, setGuest] = useState(guest);
-
+  const [countAmenities, setAmenities] = useState(amenities)
+  const [countProperty, setProperty] = useState(property)
+  // const [countProperty, setProperty] = useState(property)
+  // const [countProperty, setProperty] = useState(Property)
+  // const [countProperty, setProperty] = useState(Property)
   const onChange = (value, type) => {
-    const query = {
-      ...state,
-      [type]: value,
-    };
-    const search = setStateToUrl(query);
-    navigate({
-      pathname: LISTING_POSTS_PAGE,
-      search: `?${createSearchParams(search)}`,
-    });
+
+    // const query = {
+    //   ...state,
+    //   [type]: value,
+    // };
+    
+    console.log(value,type)
   };
 
   const handleRoomGuestApply = () => {
@@ -89,11 +91,10 @@ const CategorySearch = ({ location }) => {
   const onSearchReset = () => {
     setRoom(0);
     setGuest(0);
+    setAmenities([])
+    setProperty([])
     const search = setStateToUrl({ reset: '' });
-    navigate({
-      pathname: LISTING_POSTS_PAGE,
-      search: `?${createSearchParams(search)}`,
-    });
+    
   };
 
   return (
@@ -111,8 +112,8 @@ const CategorySearch = ({ location }) => {
         popup={
           <Checkbox.Group
             options={getAmenities.options}
-            defaultValue={amenities}
-            onChange={(value) => onChange(value, 'amenities')}
+            defaultValue={countAmenities}
+            onChange={(e) => setAmenities(e)}
           />
         }
       />
@@ -130,8 +131,8 @@ const CategorySearch = ({ location }) => {
         popup={
           <Checkbox.Group
             options={getPropertyType.options}
-            defaultValue={property}
-            onChange={(value) => onChange(value, 'property')}
+            defaultValue={countProperty}
+            onChange={(e) => setProperty(e)}
           />
         }
       />

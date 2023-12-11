@@ -12,13 +12,16 @@ import CategorySearch from './Search/CategorySearch/CategorySearch';
 import ListingMap from './ListingMap';
 import { SINGLE_POST_PAGE } from 'settings/constant';
 import ListingWrapper, { PostsWrapper, ShowMapCheckbox } from './Listing.style';
+import { Pagination } from 'antd';
+import SearchArea from './Search/Search';
 
 export default function Listing() {
   let location = useLocation();
   const { width } = useWindowSize();
   const [showMap, setShowMap] = useState(false);
-  let url = '/data/hotel.json';
+  let url = '/data/top-hotel.json';
   const { data, loading, loadMoreData, total, limit } = useDataApi(url);
+  
   let columnWidth = [1 / 1, 1 / 2, 1 / 3, 1 / 4, 1 / 5];
   if (location.search) {
     url += location.search;
@@ -30,9 +33,10 @@ export default function Listing() {
     setShowMap((showMap) => !showMap);
   };
 
-  return (
+  return (<>
+    
     <ListingWrapper>
-      <Sticky top={82} innerZ={999} activeClass="isHeaderSticky">
+      <Sticky top={82} innerZ={10} activeClass="isHeaderSticky">
         <Toolbar
           left={
             width > 991 ? (
@@ -57,7 +61,7 @@ export default function Listing() {
             link={SINGLE_POST_PAGE}
             columnWidth={columnWidth}
             data={data}
-            totalItem={total.length}
+            totalItem={total?.length}
             loading={loading}
             limit={limit}
             handleLoadMore={loadMoreData}
@@ -68,5 +72,6 @@ export default function Listing() {
         {showMap && <ListingMap />}
       </Fragment>
     </ListingWrapper>
+  </>
   );
 }

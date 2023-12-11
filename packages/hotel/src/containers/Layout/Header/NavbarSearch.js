@@ -18,7 +18,7 @@ export default function NavbarSearch() {
     const mapData = !isEmpty(searchedPlaceAPIData)
       ? mapDataHelper(searchedPlaceAPIData)
       : [];
-    if (!isEmpty(mapData) && mapData.length !== 0) {
+    if (!isEmpty(mapData) && mapData?.length !== 0) {
       mapData.forEach((singleMapData) =>
         tempLocation.push({
           lat: singleMapData ? singleMapData.lat.toFixed(3) : null,

@@ -3798,5 +3798,81 @@
 				"url": "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-3_thumb.jpg"
 			}
 		]
+	},
+	{
+		"id": 40688,
+		"agentId": 22661,
+		"title": "Practical Steel Bacon",
+		"slug": "non-cum-id",
+		"content": "Est ipsa iste temporibus. Enim et est perspiciatis. Fugit sit unde suscipit eum est rem ut dolor totam. Officia sit officiis ratione ipsum quis. Numquam distinctio ipsa. Quo excepturi eum sunt incidunt voluptas doloribus autem.",
+		"status": "draft",
+		"price": "559.00",
+		"isNegotiable": true,
+		"propertyType": "Nails",
+		"condition": "Excellent",
+		"rating": 3.5,
+		"ratingCount": 2,
+		"contactNumber": "1-755-332-9657 x8182",
+		"amenities": [
+			{
+				"id": 46526,
+				"guestRoom": 5
+			},
+			{
+				"id": 79521,
+				"bedRoom": 4
+			},
+			{
+				"id": 91279,
+				"wifiAvailability": false
+			},
+			{
+				"id": 96730,
+				"parkingAvailability": false
+			},
+			{
+				"id": 33662,
+				"poolAvailability": false
+			},
+			{
+				"id": 54057,
+				"airCondition": false
+			},
+			{
+				"id": 31656,
+				"extraBedFacility": true
+			}
+		],
+		"image": {
+			"id": 36025,
+			"url": "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-6.jpg",
+			"thumb_url": "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-6_thumb.jpg"
+		},
+		"location": {
+			"id": 44703,
+			"lat": 36.1804,
+			"lng": -86.7082,
+			"formattedAddress": "83436 Robbie Land",
+			"zipcode": "84355",
+			"city": "Lake Wilhelm",
+			"state_long": "New Hampshire",
+			"state_short": "NE",
+			"country_long": "Moldova",
+			"country_short": "MV"
+		},
+		"gallery": [
+			{
+				"id": 37129,
+				"url": "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-5_thumb.jpg"
+			},
+			{
+				"id": 77124,
+				"url": "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-4_thumb.jpg"
+			},
+			{
+				"id": 85472,
+				"url": "http://s3.amazonaws.com/redqteam.com/tripfinder-images/hotel-3_thumb.jpg"
+			}
+		]
 	}
 ]

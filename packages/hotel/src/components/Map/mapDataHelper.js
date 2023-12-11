@@ -2,7 +2,7 @@ export function mapDataHelper(infoValue) {
   const tempMapObj = {};
   const tempMapArray = [];
 
-  if (infoValue && infoValue.length !== 0) {
+  if (infoValue && infoValue?.length !== 0) {
     infoValue.map(
       ({
         place_id,
@@ -26,8 +26,8 @@ export function mapDataHelper(infoValue) {
         lng = location.lng();
         formattedAddress = formatted_address;
         if (address_components) {
-          for (let i = 0; i < address_components.length; i++) {
-            if (address_components[i].types.length) {
+          for (let i = 0; i < address_components?.length; i++) {
+            if (address_components[i].types?.length) {
               switch (address_components[i].types[0]) {
                 case 'locality':
                   city = address_components[i].long_name;

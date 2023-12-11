@@ -53,7 +53,7 @@ const LocationGrid = () => {
         />
 
         <CarouselSection>
-          {data.length !== 0 ? (
+          {data?.length !== 0 ? (
             <GlideCarousel
               carouselSelector="explore_carousel"
               prevButton={<IoIosArrowBack />}

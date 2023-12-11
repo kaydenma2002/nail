@@ -25,13 +25,13 @@ const SinglePage = () => {
   const { width } = useWindowSize();
 
   let url = '/data/hotel-single.json';
-  
+
   if (!slug) {
     url += slug;
   }
   const { data, loading } = useDataApi(url);
-  if(isEmpty(data) || loading) return <Loader />;
-  console.log(data)
+  if (isEmpty(data) || loading) return <Loader />;
+  console.log(data);
   const {
     reviews,
     rating,

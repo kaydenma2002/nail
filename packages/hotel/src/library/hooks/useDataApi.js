@@ -52,8 +52,8 @@ function dataFetchReducer(state, action) {
         data: [
           ...state.data,
           ...state.total.slice(
-            state.data.length,
-            state.data.length + state.limit
+            state.data?.length,
+            state.data?.length + state.limit
           ),
         ],
         loading: false,
