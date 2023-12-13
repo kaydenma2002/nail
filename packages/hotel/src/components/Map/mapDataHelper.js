@@ -62,7 +62,7 @@ export function mapDataHelper(infoValue) {
         tempMapObj.country_long = country_long;
         tempMapArray.push(tempMapObj);
         return tempMapArray;
-      }
+      },
     );
   }
 

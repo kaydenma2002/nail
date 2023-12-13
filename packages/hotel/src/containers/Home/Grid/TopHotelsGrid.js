@@ -24,7 +24,7 @@ const TopHotelsGrid = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('/get-nails');
-        setData(response.data);
+        setData(response.data.nails);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);

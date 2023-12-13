@@ -11,6 +11,8 @@ export const AGENT_PROFILE_PAGE = '/profile';
 export const AGENT_PROFILE_FAVORITE = 'favorite-post';
 export const AGENT_PROFILE_CONTACT = 'contact';
 export const AGENT_ACCOUNT_SETTINGS_PAGE = '/account-settings';
+export const GUEST_BOOKING_PAGE = '/booking-page';
+
 export const AGENT_PROFILE_EDIT_PAGE = 'edit';
 export const AGENT_IMAGE_EDIT_PAGE = 'change-image';
 export const AGENT_PASSWORD_CHANGE_PAGE = 'change-password';

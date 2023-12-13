@@ -110,7 +110,9 @@ export const FieldWrapper = styled.div`
         left: 0;
         top: 56px;
         z-index: 2;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.07);
+        box-shadow:
+          0 2px 6px rgba(0, 0, 0, 0.05),
+          0 0 0 1px rgba(0, 0, 0, 0.07);
         &::before {
           content: '';
           width: 14px;

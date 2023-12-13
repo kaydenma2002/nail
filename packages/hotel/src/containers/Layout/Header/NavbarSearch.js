@@ -23,7 +23,7 @@ export default function NavbarSearch() {
         tempLocation.push({
           lat: singleMapData ? singleMapData.lat.toFixed(3) : null,
           lng: singleMapData ? singleMapData.lng.toFixed(3) : null,
-        })
+        }),
       );
     }
 

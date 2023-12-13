@@ -51,7 +51,7 @@ const RenderReservationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     alert(
-      `Start Date: ${formState.ReservationDate}\nEnd Date: ${formState.endDate}\nRooms: ${formState.room}\nGuests: ${formState.guest}`
+      `Start Date: ${formState.ReservationDate}\nEnd Date: ${formState.endDate}\nRooms: ${formState.room}\nGuests: ${formState.guest}`,
     );
   };
 

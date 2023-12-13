@@ -54,7 +54,7 @@ export const useLocation = () => {
       : {
           trigger: 'load',
           length: 1,
-        }
+        },
   );
   useEffect(() => {
     const onChange = (trigger) => setState(buildState(trigger));

@@ -19,6 +19,7 @@ import {
   AGENT_IMAGE_EDIT_PAGE,
   AGENT_PASSWORD_CHANGE_PAGE,
   AGENT_ACCOUNT_SETTINGS_PAGE,
+  GUEST_BOOKING_PAGE
 } from './settings/constant';
 
 // protected route
@@ -36,43 +37,46 @@ function RequireAuth({ children }) {
 const HomePage = React.lazy(() => import('containers/Home/Home'));
 const ListingPage = React.lazy(() => import('containers/Listing/Listing'));
 const SinglePageView = React.lazy(() =>
-  import('containers/SinglePage/SinglePageView')
+  import('containers/SinglePage/SinglePageView'),
 );
 const AgentDetailsViewPage = React.lazy(() =>
-  import('containers/Agent/AccountDetails/AgentDetailsViewPage')
+  import('containers/Agent/AccountDetails/AgentDetailsViewPage'),
 );
 const AgentItemLists = React.lazy(() =>
-  import('containers/Agent/AccountDetails/AgentItemLists')
+  import('containers/Agent/AccountDetails/AgentItemLists'),
 );
 const AgentFavItemLists = React.lazy(() =>
-  import('containers/Agent/AccountDetails/AgentFavItemLists')
+  import('containers/Agent/AccountDetails/AgentFavItemLists'),
 );
 const AgentContact = React.lazy(() =>
-  import('containers/Agent/AccountDetails/AgentContact')
+  import('containers/Agent/AccountDetails/AgentContact'),
 );
 const PricingPage = React.lazy(() => import('containers/Pricing/Pricing'));
 const PrivacyPage = React.lazy(() => import('containers/Privacy/Privacy'));
 const SignInPage = React.lazy(() => import('containers/Auth/SignIn/SignIn'));
 const SignUpPage = React.lazy(() => import('containers/Auth/SignUp/SignUp'));
 const ForgetPasswordPage = React.lazy(() =>
-  import('containers/Auth/ForgetPassword')
+  import('containers/Auth/ForgetPassword'),
 );
 const NotFound = React.lazy(() => import('containers/404/404'));
 // protected route
 const AddListingPage = React.lazy(() =>
-  import('containers/AddListing/AddListing')
+  import('containers/AddListing/AddListing'),
 );
 const AgentAccountSettingsPage = React.lazy(() =>
-  import('containers/Agent/AccountSettings/AgentAccountSettingsPage')
+  import('containers/Agent/AccountSettings/AgentAccountSettingsPage'),
 );
 const AgentCreateOrUpdateForm = React.lazy(() =>
-  import('containers/Agent/AccountSettings/AgentCreateOrUpdateForm')
+  import('containers/Agent/AccountSettings/AgentCreateOrUpdateForm'),
 );
 const AgentPictureChangeForm = React.lazy(() =>
-  import('containers/Agent/AccountSettings/AgentPictureChangeForm')
+  import('containers/Agent/AccountSettings/AgentPictureChangeForm'),
 );
 const ChangePassWord = React.lazy(() =>
-  import('containers/Agent/AccountSettings/ChangePassWordForm')
+  import('containers/Agent/AccountSettings/ChangePassWordForm'),
+);
+const BookingPage = React.lazy(() =>
+  import('containers/Booking/Booking')
 );
 
 export default function AppRoutes() {
@@ -147,6 +151,16 @@ export default function AppRoutes() {
           }
         />
         <Route
+          path={GUEST_BOOKING_PAGE}
+          element={
+            <React.Suspense fallback={<Loader />}>
+
+              <BookingPage />
+
+            </React.Suspense>
+          }
+        />
+        <Route
           path={PRIVACY_PAGE}
           element={
             <React.Suspense fallback={<Loader />}>
@@ -199,6 +213,7 @@ export default function AppRoutes() {
             </React.Suspense>
           }
         >
+          
           <Route
             path={AGENT_ACCOUNT_SETTINGS_PAGE}
             element={

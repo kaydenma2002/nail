@@ -40,7 +40,7 @@ const FilterDrawer = ({ history, location }) => {
     searchParams.date_range || {
       setReservationDate: null,
       setEndDate: null,
-    }
+    },
   );
   const [price, setPrice] = useState(
     searchParams.price || {
@@ -48,7 +48,7 @@ const FilterDrawer = ({ history, location }) => {
       max: 100,
       defaultMin: 0,
       defaultMax: 100,
-    }
+    },
   );
   const roomAndGuest = {
     room: searchParams && searchParams.room ? parseInt(searchParams.room) : 0,
@@ -59,7 +59,7 @@ const FilterDrawer = ({ history, location }) => {
     roomAndGuest || {
       room: 0,
       guest: 0,
-    }
+    },
   );
   const handleIncrement = (type) => {
     setRoomGuest({

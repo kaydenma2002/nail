@@ -49,7 +49,13 @@ const LocationGrid = () => {
       <Container fluid={true}>
         <SectionTitle
           title={<Heading content="Explore Destinations" />}
-          link={<TextLink link={LISTING_POSTS_PAGE}  query="Hello"  content="Show all" />}
+          link={
+            <TextLink
+              link={LISTING_POSTS_PAGE}
+              query="Hello"
+              content="Show all"
+            />
+          }
         />
 
         <CarouselSection>

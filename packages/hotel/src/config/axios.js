@@ -24,7 +24,7 @@ instance.interceptors.request.use(
   (error) => {
     // Handle request error
     return Promise.reject(error);
-  }
+  },
 );
 
 export default instance;

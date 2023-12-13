@@ -18,19 +18,21 @@ const LinkWrapper = styled(Link)(
   textAlign,
   lineHeight,
   letterSpacing,
-  themed('TextLink')
+  themed('TextLink'),
 );
 
-const TextLink = ({ link, icon,query, content,state, ...props }) => {
+const TextLink = ({ link, icon, query, content, state, ...props }) => {
   const additionalPropValue = 'exampleValue';
   return (
-    <LinkWrapper to={{
-      pathname: link, 
-      search: query,
-      hash: "the-hash",
-      state: state
-    }} >
-      {icon} {content} 
+    <LinkWrapper
+      to={{
+        pathname: link,
+        search: query,
+        hash: 'the-hash',
+        state: state,
+      }}
+    >
+      {icon} {content}
     </LinkWrapper>
   );
 };
@@ -45,35 +47,35 @@ TextLink.propTypes = {
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ),
   ]),
   fontWeight: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ),
   ]),
   textAlign: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ),
   ]),
   lineHeight: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ),
   ]),
   letterSpacing: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     ),
   ]),
   ...base.propTypes,
