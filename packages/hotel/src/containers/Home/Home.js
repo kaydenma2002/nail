@@ -6,7 +6,7 @@ import { LayoutContext } from 'context/LayoutProvider';
 import { Waypoint } from 'react-waypoint';
 
 const Home = () => {
-  console.log(localStorage.getItem("loggedIn"))
+  console.log(localStorage.getItem('loggedIn'));
   const [, dispatch] = useContext(LayoutContext);
   return (
     <>

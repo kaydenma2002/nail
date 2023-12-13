@@ -40,7 +40,7 @@ const PostGrid = ({
   street_address,
   price,
   ratingCount,
-  
+
   slug,
   link,
 }) => {
@@ -54,7 +54,7 @@ const PostGrid = ({
           }}
         />
       }
-      image='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'
+      image="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
       street_address={street_address}
       name={<TextLink link={`${link}/${slug}`} content={name} />}
       price={`$${price}/Night - Free Cancellation`}
@@ -66,10 +66,7 @@ const PostGrid = ({
           content="View Details"
         />
       }
-    >
-      
-    </GridCard>
-    
+    ></GridCard>
   );
 };
 

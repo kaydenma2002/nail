@@ -10,23 +10,21 @@ const instance = axios.create({
 
 // Add a request interceptor to include the bearer token
 instance.interceptors.request.use(
-  config => {
+  (config) => {
     // Get the token from wherever you have stored it (e.g., localStorage)
     const token = localStorage.getItem('token');
 
     // If a token is available, add it to the Authorization header
-    if(token) {
+    if (token) {
       config.headers['Authorization'] = `Bearer ${token}`;
     }
 
     return config;
   },
-  error => {
+  (error) => {
     // Handle request error
     return Promise.reject(error);
   }
 );
 
 export default instance;
-
-

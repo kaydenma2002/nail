@@ -6,7 +6,7 @@ const ReactDatesStyleWrapper = styled.div`
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 40px;
-  
+
   .ant-form-item {
     display: flex;
     align-items: center;

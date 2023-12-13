@@ -87,8 +87,8 @@ export const SearchWrapper = styled.div`
   border-radius: 6px;
   background-color: ${themeGet('color.1', '#ffffff')};
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.08);
-  margin-top:4rem;
-  
+  margin-top: 2rem;
+
   z-index: 1;
 
   @media (min-width: 569px) and (max-width: 991px) {

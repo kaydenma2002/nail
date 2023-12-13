@@ -11,24 +11,20 @@ import BannerWrapper, { SearchWrapper } from './Search.style';
 
 const SearchArea = ({ searchTitleStyle, searchDescriptionStyle }) => {
   return (
-    
-      
-
-      <Container>
-        <SearchWrapper>
-          <Heading
-            {...searchTitleStyle}
-            content="Latest reviews. Lowest prices."
-          />
-          <Text
-            {...searchDescriptionStyle}
-            content="compares prices from 200+ booking sites to help you find the lowest
+    <Container>
+      <SearchWrapper>
+        <Heading
+          {...searchTitleStyle}
+          content="Latest reviews. Lowest prices."
+        />
+        <Text
+          {...searchDescriptionStyle}
+          content="compares prices from 200+ booking sites to help you find the lowest
           price on the right hotel for you."
-          />
-          <SearchForm />
-        </SearchWrapper>
-      </Container>
-    
+        />
+        <SearchForm />
+      </SearchWrapper>
+    </Container>
   );
 };
 

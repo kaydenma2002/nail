@@ -74,7 +74,9 @@ export default function SearchForm() {
     mapData &&
       mapData.map((singleMapData, i) => {
         return tempLocation.push({
-          formattedAddress: singleMapData ? singleMapData?.formattedAddress : '',
+          formattedAddress: singleMapData
+            ? singleMapData?.formattedAddress
+            : '',
           lat: singleMapData ? singleMapData.lat.toFixed(3) : null,
           lng: singleMapData ? singleMapData.lng.toFixed(3) : null,
         });

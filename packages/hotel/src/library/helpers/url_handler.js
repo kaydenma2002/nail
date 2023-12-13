@@ -106,7 +106,10 @@ export function getStateFromUrl(location) {
             let setReservationDate = splitDate ? splitDate[0] : null;
             let setEndDate = splitDate ? splitDate[1] : null;
             state[key] = date
-              ? { setReservationDate: setReservationDate, setEndDate: setEndDate }
+              ? {
+                  setReservationDate: setReservationDate,
+                  setEndDate: setEndDate,
+                }
               : null;
           }
           break;

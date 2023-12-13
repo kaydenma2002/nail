@@ -10,14 +10,14 @@ const fakeUserData = {
     'http://s3.amazonaws.com/redqteam.com/isomorphic-reloaded-image/profilepic.png',
   roles: ['USER', 'ADMIN'],
 };
-const storedLoggedIn = localStorage.getItem("loggedIn");
-const storedToken = localStorage.getItem("token");
+const storedLoggedIn = localStorage.getItem('loggedIn');
+const storedToken = localStorage.getItem('token');
 const AuthProvider = (props) => {
   let navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(() => {
     try {
       return storedLoggedIn ? JSON.parse(storedLoggedIn) : false;
-    } catch(error) {
+    } catch (error) {
       console.error('Error parsing storedLoggedIn:', error);
       return false; // or handle the error in an appropriate way
     }
@@ -26,20 +26,20 @@ const AuthProvider = (props) => {
   const [user, setUser] = useState(() => {
     try {
       return storedToken ? JSON.parse(storedToken) : null;
-    } catch(error) {
+    } catch (error) {
       console.error('Error parsing storedToken:', error);
       return null; // or handle the error in an appropriate way
     }
   });
-  const [token, setToken] = useState()
+  const [token, setToken] = useState();
   const signIn = (params) => {
     // localStorage.setItem(loggedIn,par)
     console.log(params, 'sign in form Props');
-    localStorage.setItem("loggedIn", JSON.stringify(true))
-    localStorage.setItem("token",JSON.stringify(params.data.token))
-    setToken(params.data.access_token)
+    localStorage.setItem('loggedIn', JSON.stringify(true));
+    localStorage.setItem('token', JSON.stringify(params.data.token));
+    setToken(params.data.access_token);
     setUser(params.data.user);
-   
+
     setLoggedIn(JSON.stringify(true));
     navigate('/', { replace: true });
   };
@@ -55,7 +55,6 @@ const AuthProvider = (props) => {
     setUser(null);
     setLoggedIn(false);
     localStorage.clear();
-
   };
 
   return (

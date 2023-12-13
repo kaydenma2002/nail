@@ -52,9 +52,8 @@ const GridCard = ({
 
   return (
     <GridCardWrapper className={`grid_card ${classes}`.trim()}>
-      
       <ContentWrapper className="content_wrapper">
-        <div>{image && <img  src={image}></img>}</div>
+        <div>{image && <img src={image}></img>}</div>
         {street_address && <LocationArea>{street_address}</LocationArea>}
         {name && <TitleArea>{name}</TitleArea>}
 

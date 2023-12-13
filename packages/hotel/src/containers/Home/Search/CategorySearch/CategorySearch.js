@@ -45,19 +45,18 @@ const CategorySearch = ({ location }) => {
   const { amenities, property, date_range, price, room, guest } = state;
   const [countRoom, setRoom] = useState(room);
   const [countGuest, setGuest] = useState(guest);
-  const [countAmenities, setAmenities] = useState(amenities)
-  const [countProperty, setProperty] = useState(property)
+  const [countAmenities, setAmenities] = useState(amenities);
+  const [countProperty, setProperty] = useState(property);
   // const [countProperty, setProperty] = useState(property)
   // const [countProperty, setProperty] = useState(Property)
   // const [countProperty, setProperty] = useState(Property)
   const onChange = (value, type) => {
-
     // const query = {
     //   ...state,
     //   [type]: value,
     // };
-    
-    console.log(value,type)
+
+    console.log(value, type);
   };
 
   const handleRoomGuestApply = () => {
@@ -91,10 +90,9 @@ const CategorySearch = ({ location }) => {
   const onSearchReset = () => {
     setRoom(0);
     setGuest(0);
-    setAmenities([])
-    setProperty([])
+    setAmenities([]);
+    setProperty([]);
     const search = setStateToUrl({ reset: '' });
-    
   };
 
   return (

@@ -13,7 +13,6 @@ const menuItems = [
     label: <NavLink to={REGISTRATION_PAGE}>Sign up</NavLink>,
     key: 'menu-2',
   },
-  
 ];
 
 const AuthMenu = ({ className }) => {

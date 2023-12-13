@@ -66,7 +66,7 @@ export default function SectionGrid({
             })
           : null}
 
-        {loading  &&
+        {loading &&
           limits.map((_, index) => (
             <Box
               className="grid_column"

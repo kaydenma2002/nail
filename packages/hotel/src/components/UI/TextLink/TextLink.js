@@ -21,10 +21,16 @@ const LinkWrapper = styled(Link)(
   themed('TextLink')
 );
 
-const TextLink = ({ link, icon, content, ...props }) => {
+const TextLink = ({ link, icon,query, content,state, ...props }) => {
+  const additionalPropValue = 'exampleValue';
   return (
-    <LinkWrapper to={link} {...props}>
-      {icon} {content}
+    <LinkWrapper to={{
+      pathname: link, 
+      search: query,
+      hash: "the-hash",
+      state: state
+    }} >
+      {icon} {content} 
     </LinkWrapper>
   );
 };

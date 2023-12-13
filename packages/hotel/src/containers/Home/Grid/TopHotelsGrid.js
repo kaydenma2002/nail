@@ -26,7 +26,7 @@ const TopHotelsGrid = () => {
         const response = await axios.get('/get-nails');
         setData(response.data);
         setLoading(false);
-      } catch(error) {
+      } catch (error) {
         console.error('Error fetching data:', error);
         setLoading(true);
       }
@@ -37,20 +37,19 @@ const TopHotelsGrid = () => {
 
   useEffect(() => {
     // Code that depends on the loaded data
-    if(data && width <= 767) {
+    if (data && width <= 767) {
       setPosts(data.slice(0, 4));
       limit = 4;
-    } else if(data && width >= 768 && width < 992) {
+    } else if (data && width >= 768 && width < 992) {
       setPosts(data.slice(0, 6));
       limit = 6;
-    } else if(data && width >= 992 && width < 1200) {
+    } else if (data && width >= 992 && width < 1200) {
       setPosts(data.slice(0, 8));
       limit = 8;
-    } else if(data && width >= 1200) {
+    } else if (data && width >= 1200) {
       setPosts(data.slice(0, 10));
       limit = 10;
     }
-   
   }, [data, width]);
 
   return (
@@ -60,7 +59,13 @@ const TopHotelsGrid = () => {
         link={<TextLink link={LISTING_POSTS_PAGE} content="View All" />}
       />
       <Toolbar
-        left={width > 991 ? <CategorySearch location={location} /> : <FilterDrawer location={location} />}
+        left={
+          width > 991 ? (
+            <CategorySearch location={location} />
+          ) : (
+            <FilterDrawer location={location} />
+          )
+        }
       />
       <SectionGrid
         link={SINGLE_POST_PAGE}
@@ -70,9 +75,7 @@ const TopHotelsGrid = () => {
         limit={limit}
         placeholder={<PostPlaceholder />}
       />
-      
     </Container>
-    
   );
 };
 

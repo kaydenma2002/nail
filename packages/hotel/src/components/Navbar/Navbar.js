@@ -33,12 +33,11 @@ const Navbar = ({
   return (
     <NavbarWrapper className={addAllClasses.join(' ')}>
       <Container>
-        
-          <LogoArea>
-            {logo}
-            {searchComponent}
-          </LogoArea>
-        
+        <LogoArea>
+          {logo}
+          {searchComponent}
+        </LogoArea>
+
         <MenuArea>
           {navMenu && (
             <MenuWrapper className="main_menu">{navMenu}</MenuWrapper>
