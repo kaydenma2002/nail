@@ -17,16 +17,11 @@ import AccountSettingWrapper, {
   FromWrapper,
 } from './AccountSettings.style';
 
-
-
-
-
 export default function AgentAccountSettingsPage() {
   return (
     <AccountSettingWrapper>
       <Container fullWidth={true}>
         <Row gutter={30}>
-         
           <Col xs={24} sm={12} md={15} lg={24}>
             <FromWrapper>
               <Outlet />

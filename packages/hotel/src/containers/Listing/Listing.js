@@ -16,7 +16,7 @@ import SearchArea from './Search/Search';
 import { Button, Card, Flex, Typography } from 'antd';
 import { Col, Row } from 'antd';
 import { useParams } from 'react-router-dom';
-import { CardComponent } from './Card/index'
+import { CardComponent } from './Card/index';
 import axios from '../../config/axios';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
@@ -32,16 +32,15 @@ export default function Listing(props) {
         const response = await axios.get(`/get-nails?page=${page}`);
         setData(response.data.nails);
         setTotal(response.data.total_count);
-      } catch(error) {
+      } catch (error) {
         console.error('Error fetching data:', error);
-        
       }
     };
-    console.log(1)
+    console.log(1);
     fetchData();
   }, [page]);
   const handleChange = (event, value) => {
-    if(value === page) {
+    if (value === page) {
       return; // Do nothing if the value is the same
     }
 
@@ -55,7 +54,7 @@ export default function Listing(props) {
   const pathname = location.pathname;
 
   const { width } = useWindowSize();
-  
+
   const handleMapToggle = () => {
     setShowMap((showMap) => !showMap);
   };
@@ -87,19 +86,24 @@ export default function Listing(props) {
           <Row key={index} justify="center">
             <Col xs={2} sm={4} md={6} lg={8} xl={7}></Col>
             <Col xs={20} sm={16} md={12} lg={8} xl={8}>
-              <CardComponent name={item.name} address={item.full_address} phone={item.phone} />
-              
+              <CardComponent
+                name={item.name}
+                address={item.full_address}
+                phone={item.phone}
+              />
             </Col>
             <Col xs={2} sm={4} md={6} lg={8} xl={7}></Col>
           </Row>
         ))}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <Stack spacing={2}>
-            <Pagination count={Math.floor(total / 10)} onChange={handleChange} />
+            <Pagination
+              count={Math.floor(total / 10)}
+              onChange={handleChange}
+            />
           </Stack>
         </div>
       </ListingWrapper>
-      
     </>
   );
 }

@@ -131,11 +131,16 @@ const AgentCreateOrUpdateForm = () => {
                     rules={{ required: true }}
                     render={({ field: { onChange, onBlur, value } }) => (
                       <Select
-                        options={languageOptions}
+                        value={value || 'english'}
                         onChange={onChange}
                         onBlur={onBlur}
-                        defaultValue={value || 'english'}
-                      />
+                      >
+                        {languageOptions.map((option) => (
+                          <Select.Option key={option.value} value={option.value}>
+                            {option.label}
+                          </Select.Option>
+                        ))}
+                      </Select>
                     )}
                   />
                 </FormControl>

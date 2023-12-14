@@ -19,7 +19,7 @@ const menuItems = [
     key: 'menu-2',
   },
   {
-    label: <NavLink to={AGENT_PROFILE_PAGE}>Agent</NavLink>,
+    label: <NavLink to={AGENT_PROFILE_PAGE}>Nailers</NavLink>,
     key: 'menu-3',
   },
   {
