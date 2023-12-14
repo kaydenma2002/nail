@@ -13,7 +13,9 @@ export function CardComponent(props) {
   const navigate = useNavigate();
   const [timeList, setTimeList] = useState([]);
   const handleClick = (time) => {
-    navigate(`${GUEST_BOOKING_PAGE}`, { state:  {'hour': time.substring(0,2),'minute':time.substring(3,5) }  });
+    navigate(`${GUEST_BOOKING_PAGE}`, {
+      state: { hour: time.substring(0, 2), minute: time.substring(3, 5) },
+    });
   };
   useEffect(() => {
     const calculateTimes = () => {

@@ -136,7 +136,10 @@ const AgentCreateOrUpdateForm = () => {
                         onBlur={onBlur}
                       >
                         {languageOptions.map((option) => (
-                          <Select.Option key={option.value} value={option.value}>
+                          <Select.Option
+                            key={option.value}
+                            value={option.value}
+                          >
                             {option.label}
                           </Select.Option>
                         ))}

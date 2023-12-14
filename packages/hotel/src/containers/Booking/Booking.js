@@ -1,4 +1,4 @@
-import React, { Fragment,useEffect,useState }  from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -20,14 +20,14 @@ dayjs.extend(customParseFormat);
 export default function HorizontalLinearStepper() {
   const range = (start, end) => {
     const result = [];
-    for(let i = start; i < end; i++) {
+    for (let i = start; i < end; i++) {
       result.push(i);
     }
     return result;
   };
   const location = useLocation();
-  const hour = location.state.hour
-  const minute = location.state.minute
+  const hour = location.state.hour;
+  const minute = location.state.minute;
   const [activeStep, setActiveStep] = React.useState(0);
   const [firstName, setFirstName] = React.useState(null);
   const [lastName, setLastName] = React.useState(null);
@@ -37,35 +37,35 @@ export default function HorizontalLinearStepper() {
   const [bookingDate, setBookingDate] = React.useState(null);
   const [skipped, setSkipped] = React.useState(new Set());
   useEffect(() => {
-    console.log(firstName)
-  }, [firstName, lastName, email, phone, address,])
+    console.log(firstName);
+  }, [firstName, lastName, email, phone, address]);
   const {
     control,
     formState: { errors },
     handleSubmit,
   } = useForm();
   const onSubmit = (data) => {
-    setFirstName(data.firstName)
-    setLastName(data.lastName)
-    setPhone(data.phoneNumber)
-    setEmail(data.email)
-    setAddress(data.address)
-    console.log(data)
-    handleNext()
+    setFirstName(data.firstName);
+    setLastName(data.lastName);
+    setPhone(data.phoneNumber);
+    setEmail(data.email);
+    setAddress(data.address);
+    console.log(data);
+    handleNext();
   };
   const steps = [
     'Customer Information',
     'Checkout Confirmation',
     'Billing Invoice',
   ];
-  
+
   const isStepSkipped = (step) => {
     return skipped.has(step);
   };
 
   const handleNext = () => {
     let newSkipped = skipped;
-    if(isStepSkipped(activeStep)) {
+    if (isStepSkipped(activeStep)) {
       newSkipped = new Set(newSkipped.values());
       newSkipped.delete(activeStep);
     }
@@ -79,8 +79,6 @@ export default function HorizontalLinearStepper() {
   };
 
   const handleSkip = () => {
-    
-
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
     setSkipped((prevSkipped) => {
       const newSkipped = new Set(prevSkipped.values());
@@ -101,7 +99,6 @@ export default function HorizontalLinearStepper() {
   const disabledDateTime = () => ({
     disabledHours: () => range(0, hour),
     disabledMinutes: () => range(0, minute),
-    
   });
   return (
     <Container fluid={true}>
@@ -113,8 +110,8 @@ export default function HorizontalLinearStepper() {
               {steps.map((label, index) => {
                 const stepProps = {};
                 const labelProps = {};
-                
-                if(isStepSkipped(index)) {
+
+                if (isStepSkipped(index)) {
                   stepProps.completed = false;
                 }
                 return (
@@ -124,26 +121,34 @@ export default function HorizontalLinearStepper() {
                 );
               })}
             </Stepper>
-            {activeStep === steps.length &&
+            {activeStep === steps.length && (
               <React.Fragment>
-              <Typography sx={{ mt: 2, mb: 1 }}>
-                All steps completed - you&apos;re finished
-              </Typography>
-              <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                <Box sx={{ flex: '1 1 auto' }} />
-                <Button onClick={handleReset}>Reset</Button>
-              </Box>
-            </React.Fragment>}
-            {activeStep === 0 &&
+                <Typography sx={{ mt: 2, mb: 1 }}>
+                  All steps completed - you&apos;re finished
+                </Typography>
+                <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                  <Box sx={{ flex: '1 1 auto' }} />
+                  <Button onClick={handleReset}>Reset</Button>
+                </Box>
+              </React.Fragment>
+            )}
+            {activeStep === 0 && (
               <Fragment>
                 <FormTitle>Basic Information</FormTitle>
-                <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
+                <form
+                  className="form-container"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
                   <Row gutter={30}>
                     <Col lg={12} xs={24}>
                       <FormControl
                         label="First name"
                         htmlFor="firstName"
-                        error={errors.firstName && <span>This field is required!</span>}
+                        error={
+                          errors.firstName && (
+                            <span>This field is required!</span>
+                          )
+                        }
                       >
                         <Controller
                           name="firstName"
@@ -151,7 +156,11 @@ export default function HorizontalLinearStepper() {
                           control={control}
                           rules={{ required: true }}
                           render={({ field: { onChange, onBlur, value } }) => (
-                            <Input onChange={onChange} onBlur={onBlur} value={value} />
+                            <Input
+                              onChange={onChange}
+                              onBlur={onBlur}
+                              value={value}
+                            />
                           )}
                         />
                       </FormControl>
@@ -160,7 +169,11 @@ export default function HorizontalLinearStepper() {
                       <FormControl
                         label="Last name"
                         htmlFor="lastName"
-                        error={errors.lastName && <span>This field is required!</span>}
+                        error={
+                          errors.lastName && (
+                            <span>This field is required!</span>
+                          )
+                        }
                       >
                         <Controller
                           name="lastName"
@@ -168,7 +181,11 @@ export default function HorizontalLinearStepper() {
                           control={control}
                           rules={{ required: true }}
                           render={({ field: { onChange, onBlur, value } }) => (
-                            <Input onChange={onChange} onBlur={onBlur} value={value} />
+                            <Input
+                              onChange={onChange}
+                              onBlur={onBlur}
+                              value={value}
+                            />
                           )}
                         />
                       </FormControl>
@@ -185,7 +202,6 @@ export default function HorizontalLinearStepper() {
                       >
                         <Controller
                           name="bookingDate"
-                          
                           control={control}
                           rules={{ required: true }}
                           render={({ field: { onChange, onBlur, value } }) => (
@@ -195,14 +211,16 @@ export default function HorizontalLinearStepper() {
                               disabledTime={disabledDateTime}
                               defaultValue={dayjs(`${hour}/${minute}`, 'HH:mm')}
                               showTime={{
-                                defaultValue: dayjs(`${hour}/${minute}`, 'HH:mm'),
+                                defaultValue: dayjs(
+                                  `${hour}/${minute}`,
+                                  'HH:mm',
+                                ),
                               }}
                             />
                           )}
                         />
                       </FormControl>
                     </Col>
-                    
                   </Row>
                   <Row gutter={30}>
                     <Col lg={12} xs={24}>
@@ -228,7 +246,8 @@ export default function HorizontalLinearStepper() {
                           control={control}
                           rules={{
                             required: true,
-                            pattern: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+                            pattern:
+                              /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
                           }}
                           render={({ field: { onChange, onBlur, value } }) => (
                             <Input
@@ -267,7 +286,11 @@ export default function HorizontalLinearStepper() {
                             pattern: /^[0-9]*$/,
                           }}
                           render={({ field: { onChange, onBlur, value } }) => (
-                            <Input onChange={onChange} onBlur={onBlur} value={value} />
+                            <Input
+                              onChange={onChange}
+                              onBlur={onBlur}
+                              value={value}
+                            />
                           )}
                         />
                       </FormControl>
@@ -276,7 +299,9 @@ export default function HorizontalLinearStepper() {
                       <FormControl
                         label="Where you live"
                         htmlFor="address"
-                        error={errors.address && <span>This field is required!</span>}
+                        error={
+                          errors.address && <span>This field is required!</span>
+                        }
                       >
                         <Controller
                           name="address"
@@ -286,7 +311,11 @@ export default function HorizontalLinearStepper() {
                             required: true,
                           }}
                           render={({ field: { onChange, onBlur, value } }) => (
-                            <Input onChange={onChange} onBlur={onBlur} value={value} />
+                            <Input
+                              onChange={onChange}
+                              onBlur={onBlur}
+                              value={value}
+                            />
                           )}
                         />
                       </FormControl>
@@ -300,9 +329,7 @@ export default function HorizontalLinearStepper() {
                           name="describeYourself"
                           defaultValue=""
                           control={control}
-                          rules={{
-                            
-                          }}
+                          rules={{}}
                           render={({ field: { onChange, onBlur, value } }) => (
                             <Input.TextArea
                               rows={5}
@@ -316,62 +343,49 @@ export default function HorizontalLinearStepper() {
                     </Col>
                   </Row>
                   <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                    
                     <Box sx={{ flex: '1 1 auto' }} />
 
-
-                    <Button type="submit" >
+                    <Button type="submit">
                       {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                     </Button>
                   </Box>
-                  
                 </form>
-              </Fragment>}
-            {activeStep === 1 &&
+              </Fragment>
+            )}
+            {activeStep === 1 && (
               <React.Fragment>
                 <Typography sx={{ mt: 2, mb: 1 }}>
                   Step {activeStep + 1}
                 </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                  <Button
-                    color="inherit"
-                   
-                    onClick={handleBack}
-                    sx={{ mr: 1 }}
-                  >
+                  <Button color="inherit" onClick={handleBack} sx={{ mr: 1 }}>
                     Back
                   </Button>
                   <Box sx={{ flex: '1 1 auto' }} />
-                 
 
                   <Button onClick={handleNext}>
                     {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                   </Button>
                 </Box>
-              </React.Fragment>}
-            {activeStep === 2 &&
+              </React.Fragment>
+            )}
+            {activeStep === 2 && (
               <React.Fragment>
                 <Typography sx={{ mt: 2, mb: 1 }}>
                   Step {activeStep + 1}
                 </Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                  <Button
-                    color="inherit"
-                    
-                    onClick={handleBack}
-                    sx={{ mr: 1 }}
-                  >
+                  <Button color="inherit" onClick={handleBack} sx={{ mr: 1 }}>
                     Back
                   </Button>
                   <Box sx={{ flex: '1 1 auto' }} />
-                  
 
                   <Button onClick={handleNext}>
                     {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                   </Button>
                 </Box>
-              </React.Fragment>}
-
+              </React.Fragment>
+            )}
           </Box>
         </Col>
         <Col xxl={2} xl={4} lg={4} md={0} sm={0}></Col>
