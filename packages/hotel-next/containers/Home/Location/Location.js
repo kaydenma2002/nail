@@ -24,7 +24,7 @@ const LocationGrid = ({ data, deviceType }) => {
         />
 
         <CarouselSection>
-          {data.length !== 0 ? (
+          {data?.length !== 0 ? (
             <Carousel
               ssr
               additionalTransfrom={0}

@@ -26,7 +26,7 @@ export default function PricingHero({
             'focus:!ring-0 2xl:!p-[11px_26px]',
             state === 'monthly'
               ? 'bg-gray-dark text-white'
-              : '!bg-transparent !text-gray-dark'
+              : '!bg-transparent !text-gray-dark',
           )}
           onClick={() => onClick('monthly')}
         >
@@ -38,7 +38,7 @@ export default function PricingHero({
             'focus:!ring-0 2xl:!p-[11px_26px]',
             state === 'annually'
               ? 'bg-gray-dark text-white'
-              : '!bg-transparent !text-gray-dark'
+              : '!bg-transparent !text-gray-dark',
           )}
           onClick={() => onClick('annually')}
         >

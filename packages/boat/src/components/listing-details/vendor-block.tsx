@@ -59,7 +59,7 @@ export default function VendorBlock({ vendor, stats }: VendorProps) {
           {vendor.languages.map((item: string, index) => (
             <span key={item} className="ml-1 text-gray-dark">
               {item}
-              {index < vendor.languages.length - 1 && ' &'}
+              {index < vendor.languages?.length - 1 && ' &'}
             </span>
           ))}
         </p>

@@ -27,7 +27,7 @@ const Avatar = ({ className, rounded = 'full', ...props }: AvatarProps) => {
         className,
         classes.base,
         classes.rounded[rounded],
-        props.onClick && 'cursor-pointer'
+        props.onClick && 'cursor-pointer',
       )}
       {...props}
     />

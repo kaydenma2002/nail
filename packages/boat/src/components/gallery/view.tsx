@@ -6,12 +6,12 @@ import { fadeInBottom } from '@/config/constants';
 import { GALLERY_VIEW, useGallery } from '@/components/gallery/context';
 
 const GalleryCarousel = dynamic(
-  () => import('@/components/gallery/gallery-carousel')
+  () => import('@/components/gallery/gallery-carousel'),
 );
 
 function renderGalleryContent(
   view: GALLERY_VIEW | string,
-  initialSlide: number
+  initialSlide: number,
 ) {
   switch (view) {
     case 'MODAL_GALLERY':

@@ -21,7 +21,7 @@ export default function AgentItemLists({
       columnWidth={[1 / 1, 1 / 2, 1 / 3, 1 / 4, 1 / 5, 1 / 6]}
       deviceType={deviceType}
       data={listed_post}
-      totalItem={listed_post.length}
+      totalItem={listed_post?.length}
       limit={LISTED_POST_LIMIT}
       loading={loading}
       handleLoadMore={loadMoreData}

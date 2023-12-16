@@ -7,13 +7,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Container } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import moment from 'moment';
 import { useForm, Controller } from 'react-hook-form';
-import { Row, Col, Input, Select, DatePicker } from 'antd';
+import { Row, Col, Input, DatePicker, Select } from 'antd';
 import FormControl from 'components/UI/FormControl/FormControl';
-// import DatePicker from 'components/UI/AntdDatePicker/AntdDatePicker';
 import { FormTitle } from './AccountSettings.style';
 import dayjs from 'dayjs';
+import { Card } from 'antd';
+
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 dayjs.extend(customParseFormat);
 
@@ -25,20 +25,74 @@ export default function HorizontalLinearStepper() {
     }
     return result;
   };
+  const statesData = [
+    'Alabama',
+    'Alaska',
+    'Arizona',
+    'Arkansas',
+    'California',
+    'Colorado',
+    'Connecticut',
+    'Delaware',
+    'Florida',
+    'Georgia',
+    'Hawaii',
+    'Idaho',
+    'Illinois',
+    'Indiana',
+    'Iowa',
+    'Kansas',
+    'Kentucky',
+    'Louisiana',
+    'Maine',
+    'Maryland',
+    'Massachusetts',
+    'Michigan',
+    'Minnesota',
+    'Mississippi',
+    'Missouri',
+    'Montana',
+    'Nebraska',
+    'Nevada',
+    'New Hampshire',
+    'New Jersey',
+    'New Mexico',
+    'New York',
+    'North Carolina',
+    'North Dakota',
+    'Ohio',
+    'Oklahoma',
+    'Oregon',
+    'Pennsylvania',
+    'Rhode Island',
+    'South Carolina',
+    'South Dakota',
+    'Tennessee',
+    'Texas',
+    'Utah',
+    'Vermont',
+    'Virginia',
+    'Washington',
+    'West Virginia',
+    'Wisconsin',
+    'Wyoming',
+  ];
   const location = useLocation();
   const hour = location.state.hour;
   const minute = location.state.minute;
   const [activeStep, setActiveStep] = React.useState(0);
   const [firstName, setFirstName] = React.useState(null);
   const [lastName, setLastName] = React.useState(null);
-  const [email, setEmail] = React.useState(null);
-  const [phone, setPhone] = React.useState(null);
+  const [city, setCity] = React.useState(null);
   const [address, setAddress] = React.useState(null);
+  const [state, setState] = React.useState(null);
+  const [zipCode, setZipCode] = React.useState(null);
   const [bookingDate, setBookingDate] = React.useState(null);
   const [skipped, setSkipped] = React.useState(new Set());
   useEffect(() => {
     console.log(firstName);
-  }, [firstName, lastName, email, phone, address]);
+  }, [firstName, lastName, city, state, zipCode, address, bookingDate]);
+
   const {
     control,
     formState: { errors },
@@ -47,12 +101,16 @@ export default function HorizontalLinearStepper() {
   const onSubmit = (data) => {
     setFirstName(data.firstName);
     setLastName(data.lastName);
-    setPhone(data.phoneNumber);
-    setEmail(data.email);
+    setCity(data.city);
+    setState(data.state);
+    setZipCode(data.zipCode);
+    setState(data.state);
     setAddress(data.address);
+    setBookingDate(data.bookingDate);
     console.log(data);
     handleNext();
   };
+
   const steps = [
     'Customer Information',
     'Checkout Confirmation',
@@ -100,295 +158,409 @@ export default function HorizontalLinearStepper() {
     disabledHours: () => range(0, hour),
     disabledMinutes: () => range(0, minute),
   });
+
   return (
     <Container fluid={true}>
-      <Row>
-        <Col xxl={2} xl={4} lg={4} md={0} sm={0}></Col>
-        <Col xxl={20} xl={16} lg={16} md={24} sm={24}>
-          <Box sx={{ width: '100%' }}>
-            <Stepper activeStep={activeStep}>
-              {steps.map((label, index) => {
-                const stepProps = {};
-                const labelProps = {};
+      <Row style={{ marginTop: '4rem' }}>
+        <Col xxl={1} xl={1} lg={1} md={0} sm={0}></Col>
+        <Col xxl={22} xl={22} lg={22} md={24} sm={24}>
+          {activeStep === 0 && (
+            <form className="form-container" onSubmit={handleSubmit(onSubmit)}>
+              <Row gutter={24}>
+                <Col xxl={12} xl={12} lg={12} md={24} sm={24}>
+                  <Card>
+                    <Box sx={{ width: '100%' }}>
+                      <Stepper activeStep={activeStep}>
+                        {steps.map((label, index) => {
+                          const stepProps = {};
+                          const labelProps = {};
 
-                if (isStepSkipped(index)) {
-                  stepProps.completed = false;
-                }
-                return (
-                  <Step key={label} {...stepProps}>
-                    <StepLabel {...labelProps}>{label}</StepLabel>
-                  </Step>
-                );
-              })}
-            </Stepper>
-            {activeStep === steps.length && (
-              <React.Fragment>
-                <Typography sx={{ mt: 2, mb: 1 }}>
-                  All steps completed - you&apos;re finished
-                </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                  <Box sx={{ flex: '1 1 auto' }} />
-                  <Button onClick={handleReset}>Reset</Button>
-                </Box>
-              </React.Fragment>
-            )}
-            {activeStep === 0 && (
-              <Fragment>
-                <FormTitle>Basic Information</FormTitle>
-                <form
-                  className="form-container"
-                  onSubmit={handleSubmit(onSubmit)}
-                >
-                  <Row gutter={30}>
-                    <Col lg={12} xs={24}>
-                      <FormControl
-                        label="First name"
-                        htmlFor="firstName"
-                        error={
-                          errors.firstName && (
-                            <span>This field is required!</span>
-                          )
-                        }
-                      >
-                        <Controller
-                          name="firstName"
-                          defaultValue=""
-                          control={control}
-                          rules={{ required: true }}
-                          render={({ field: { onChange, onBlur, value } }) => (
-                            <Input
-                              onChange={onChange}
-                              onBlur={onBlur}
-                              value={value}
-                            />
-                          )}
-                        />
-                      </FormControl>
-                    </Col>
-                    <Col lg={12} xs={24}>
-                      <FormControl
-                        label="Last name"
-                        htmlFor="lastName"
-                        error={
-                          errors.lastName && (
-                            <span>This field is required!</span>
-                          )
-                        }
-                      >
-                        <Controller
-                          name="lastName"
-                          defaultValue=""
-                          control={control}
-                          rules={{ required: true }}
-                          render={({ field: { onChange, onBlur, value } }) => (
-                            <Input
-                              onChange={onChange}
-                              onBlur={onBlur}
-                              value={value}
-                            />
-                          )}
-                        />
-                      </FormControl>
-                    </Col>
-                  </Row>
-                  <Row gutter={30}>
-                    <Col lg={24} xs={24}>
-                      <FormControl
-                        label="Booking Date"
-                        htmlFor="bookingDate"
-                        error={
-                          errors.booking && <span>This field is required!</span>
-                        }
-                      >
-                        <Controller
-                          name="bookingDate"
-                          control={control}
-                          rules={{ required: true }}
-                          render={({ field: { onChange, onBlur, value } }) => (
-                            <DatePicker
-                              format="YYYY-MM-DD HH:mm:ss"
-                              disabledDate={disabledDate}
-                              disabledTime={disabledDateTime}
-                              defaultValue={dayjs(`${hour}/${minute}`, 'HH:mm')}
-                              showTime={{
-                                defaultValue: dayjs(
+                          if (isStepSkipped(index)) {
+                            stepProps.completed = false;
+                          }
+                          // return (
+                          //   <Step key={label} {...stepProps}>
+                          //     <StepLabel {...labelProps}>{label}</StepLabel>
+                          //   </Step>
+                          // );
+                        })}
+                      </Stepper>
+
+                      <Fragment>
+                        <FormTitle>Enter Billing Information</FormTitle>
+
+                        <Row gutter={30}>
+                          <Col lg={12} xs={24}>
+                            <FormControl
+                              label="First name"
+                              htmlFor="firstName"
+                              error={
+                                errors.firstName && (
+                                  <span>This field is required!</span>
+                                )
+                              }
+                            >
+                              <Controller
+                                name="firstName"
+                                defaultValue=""
+                                control={control}
+                                rules={{ required: true }}
+                                render={({
+                                  field: { onChange, onBlur, value },
+                                }) => (
+                                  <Input
+                                    onChange={onChange}
+                                    onBlur={onBlur}
+                                    value={value}
+                                  />
+                                )}
+                              />
+                            </FormControl>
+                          </Col>
+                          <Col lg={12} xs={24}>
+                            <FormControl
+                              label="Last name"
+                              htmlFor="lastName"
+                              error={
+                                errors.lastName && (
+                                  <span>This field is required!</span>
+                                )
+                              }
+                            >
+                              <Controller
+                                name="lastName"
+                                defaultValue=""
+                                control={control}
+                                rules={{ required: true }}
+                                render={({
+                                  field: { onChange, onBlur, value },
+                                }) => (
+                                  <Input
+                                    onChange={onChange}
+                                    onBlur={onBlur}
+                                    value={value}
+                                  />
+                                )}
+                              />
+                            </FormControl>
+                          </Col>
+                        </Row>
+                        <Row gutter={30}>
+                          <Col lg={24} xs={24}>
+                            <FormControl
+                              label="Booking Date"
+                              htmlFor="bookingDate"
+                              error={
+                                errors.bookingDate && (
+                                  <span>This field is required!</span>
+                                )
+                              }
+                            >
+                              <Controller
+                                name="bookingDate"
+                                control={control}
+                                rules={{ required: true }}
+                                defaultValue={dayjs(
                                   `${hour}/${minute}`,
-                                  'HH:mm',
-                                ),
-                              }}
-                            />
-                          )}
-                        />
-                      </FormControl>
-                    </Col>
-                  </Row>
-                  <Row gutter={30}>
-                    <Col lg={12} xs={24}>
-                      <FormControl
-                        label="Email address"
-                        htmlFor="email"
-                        error={
-                          errors.email && (
-                            <>
-                              {errors.email?.type === 'required' && (
+                                  'HH:mm'
+                                )}
+                                render={({
+                                  field: { onChange, onBlur, value },
+                                }) => (
+                                  <DatePicker
+                                    format="YYYY-MM-DD HH:mm:ss"
+                                    disabledDate={disabledDate}
+                                    disabledTime={disabledDateTime}
+                                    showTime={{
+                                      defaultValue: dayjs(
+                                        `${hour}/${minute}`,
+                                        'HH:mm'
+                                      ),
+                                    }}
+                                    onChange={onChange} // send value to hook form
+                                    onBlur={onBlur} // notify when input is touched/blur
+                                    value={value}
+                                    id="bookingDate" // Make sure this matches the htmlFor prop in FormControl
+                                  />
+                                )}
+                              />
+                            </FormControl>
+                          </Col>
+                        </Row>
+                        <Row gutter={30}>
+                          <Col lg={24} xs={24}>
+                            <FormControl
+                              label="Street"
+                              htmlFor="street"
+                              error={
+                                errors.street && (
+                                  <>
+                                    {errors.street?.type === 'required' && (
+                                      <span>This field is required!</span>
+                                    )}
+                                  </>
+                                )
+                              }
+                            >
+                              <Controller
+                                name="street"
+                                defaultValue=""
+                                control={control}
+                                rules={{ required: true }}
+                                render={({
+                                  field: { onChange, onBlur, value },
+                                }) => (
+                                  <Input
+                                    onChange={onChange}
+                                    onBlur={onBlur}
+                                    value={value}
+                                  />
+                                )}
+                              />
+                            </FormControl>
+                          </Col>
+                        </Row>
+                        <Row gutter={30}>
+                          <Col xxl={8} xl={12} lg={12} xs={24}>
+                            <FormControl
+                              label="State"
+                              htmlFor="state"
+                              error={
+                                errors.state && (
+                                  <>
+                                    {errors.state?.type === 'required' && (
+                                      <span>This field is required!</span>
+                                    )}
+                                  </>
+                                )
+                              }
+                            >
+                              <Select
+                                showSearch
+                                placeholder="Select a state"
+                                optionFilterProp="children"
+                              >
+                                {statesData.map((state, index) => (
+                                  <Option key={index} value={state}>
+                                    {state}
+                                  </Option>
+                                ))}
+                              </Select>
+                            </FormControl>
+                          </Col>
+                          <Col xxl={8} xl={12} lg={12} xs={24}>
+                            <FormControl
+                              label="City"
+                              htmlFor="city"
+                              error={
+                                errors.city && (
+                                  <span>This field is required!</span>
+                                )
+                              }
+                            >
+                              <Controller
+                                name="city"
+                                defaultValue=""
+                                control={control}
+                                rules={{ required: true }}
+                                render={({
+                                  field: { onChange, onBlur, value },
+                                }) => (
+                                  <Input
+                                    onChange={onChange}
+                                    onBlur={onBlur}
+                                    value={value}
+                                  />
+                                )}
+                              />
+                            </FormControl>
+                          </Col>
+                          <Col xxl={8} xl={12} lg={12} xs={24}>
+                            <FormControl
+                              label="Zip Code"
+                              htmlFor="zipCode"
+                              error={
+                                errors.zipCode && (
+                                  <span>This field is required!</span>
+                                )
+                              }
+                            >
+                              <Controller
+                                name="zipCode"
+                                defaultValue=""
+                                control={control}
+                                rules={{ required: true }}
+                                render={({
+                                  field: { onChange, onBlur, value },
+                                }) => (
+                                  <Input
+                                    onChange={onChange}
+                                    onBlur={onBlur}
+                                    value={value}
+                                  />
+                                )}
+                              />
+                            </FormControl>
+                          </Col>
+                        </Row>
+                      </Fragment>
+                    </Box>
+                  </Card>
+                </Col>
+                <Col xxl={12} xl={12} lg={12} md={24} sm={24}>
+                  <Card>
+                    <Fragment>
+                      <FormTitle>Payment Information</FormTitle>
+
+                      <Row gutter={30}>
+                        <Col lg={24} xs={24}>
+                          <FormControl
+                            label="Card Number"
+                            htmlFor="cardNumber"
+                            error={
+                              errors.cardNumber && (
                                 <span>This field is required!</span>
+                              )
+                            }
+                          >
+                            <Controller
+                              name="cardNumber"
+                              defaultValue=""
+                              control={control}
+                              rules={{ required: true }}
+                              render={({
+                                field: { onChange, onBlur, value },
+                              }) => (
+                                <Input
+                                  onChange={onChange}
+                                  onBlur={onBlur}
+                                  value={value}
+                                />
                               )}
-                              {errors.email?.type === 'pattern' && (
-                                <span>Please enter a valid email address!</span>
-                              )}
-                            </>
-                          )
-                        }
-                      >
-                        <Controller
-                          name="email"
-                          defaultValue=""
-                          control={control}
-                          rules={{
-                            required: true,
-                            pattern:
-                              /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-                          }}
-                          render={({ field: { onChange, onBlur, value } }) => (
-                            <Input
-                              type="email"
-                              onChange={onChange}
-                              onBlur={onBlur}
-                              value={value}
                             />
-                          )}
-                        />
-                      </FormControl>
-                    </Col>
-                    <Col lg={12} xs={24}>
-                      <FormControl
-                        label="Phone number"
-                        htmlFor="phoneNumber"
-                        error={
-                          errors.phoneNumber && (
-                            <>
-                              {errors.phoneNumber?.type === 'required' && (
+                          </FormControl>
+                        </Col>
+                        
+                      </Row>
+                      <Row gutter={30}>
+                        <Col lg={12} xs={24}>
+                          <FormControl
+                            label="Expriry Date"
+                            htmlFor="expiryDate"
+                            error={
+                              errors.expiryDate && (
                                 <span>This field is required!</span>
+                              )
+                            }
+                          >
+                            <Controller
+                              name="expiryDate"
+                              defaultValue=""
+                              control={control}
+                              rules={{ required: true }}
+                              render={({
+                                field: { onChange, onBlur, value },
+                              }) => (
+                                <Input
+                                  onChange={onChange}
+                                  onBlur={onBlur}
+                                  value={value}
+                                />
                               )}
-                              {errors.phoneNumber?.type === 'pattern' && (
-                                <span>Please enter your valid number!</span>
+                            />
+                          </FormControl>
+                        </Col>
+                        <Col lg={12} xs={24}>
+                          <FormControl
+                            label="CVC"
+                            htmlFor="cvc"
+                            error={
+                              errors.cvc && (
+                                <span>This field is required!</span>
+                              )
+                            }
+                          >
+                            <Controller
+                              name="cvc"
+                              control={control}
+                              rules={{ required: true }}
+                              
+                              render={({
+                                field: { onChange, onBlur, value },
+                              }) => (
+                                <Input
+                                  onChange={onChange}
+                                  onBlur={onBlur}
+                                  value={value}
+                                />
                               )}
-                            </>
-                          )
-                        }
-                      >
-                        <Controller
-                          name="phoneNumber"
-                          defaultValue=""
-                          control={control}
-                          rules={{
-                            required: true,
-                            pattern: /^[0-9]*$/,
-                          }}
-                          render={({ field: { onChange, onBlur, value } }) => (
-                            <Input
-                              onChange={onChange}
-                              onBlur={onBlur}
-                              value={value}
                             />
-                          )}
-                        />
-                      </FormControl>
-                    </Col>
-                    <Col lg={24} xs={24}>
-                      <FormControl
-                        label="Where you live"
-                        htmlFor="address"
-                        error={
-                          errors.address && <span>This field is required!</span>
-                        }
-                      >
-                        <Controller
-                          name="address"
-                          defaultValue=""
-                          control={control}
-                          rules={{
-                            required: true,
-                          }}
-                          render={({ field: { onChange, onBlur, value } }) => (
-                            <Input
-                              onChange={onChange}
-                              onBlur={onBlur}
-                              value={value}
+                          </FormControl>
+                        </Col>
+                      </Row>
+                      <Row gutter={30}>
+                        <Col lg={24} xs={24}>
+                          <FormControl
+                            label="Card Holder Name"
+                            htmlFor="card_name"
+                            error={
+                              errors.card_name && (
+                                <>
+                                  {errors.card_name?.type === 'required' && (
+                                    <span>This field is required!</span>
+                                  )}
+                                </>
+                              )
+                            }
+                          >
+                            <Controller
+                              name="card_name"
+                              defaultValue=""
+                              control={control}
+                              rules={{ required: true }}
+                              render={({
+                                field: { onChange, onBlur, value },
+                              }) => (
+                                <Input
+                                  onChange={onChange}
+                                  onBlur={onBlur}
+                                  value={value}
+                                />
+                              )}
                             />
-                          )}
-                        />
-                      </FormControl>
-                    </Col>
-                    <Col lg={24} xs={24}>
-                      <FormControl
-                        label="Describe Yourself (Optional)"
-                        htmlFor="describeYourself"
-                      >
-                        <Controller
-                          name="describeYourself"
-                          defaultValue=""
-                          control={control}
-                          rules={{}}
-                          render={({ field: { onChange, onBlur, value } }) => (
-                            <Input.TextArea
-                              rows={5}
-                              onChange={onChange}
-                              onBlur={onBlur}
-                              value={value}
-                            />
-                          )}
-                        />
-                      </FormControl>
-                    </Col>
-                  </Row>
-                  <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                    <Box sx={{ flex: '1 1 auto' }} />
+                          </FormControl>
+                        </Col>
+                      </Row>
+                      
+                    </Fragment>
 
-                    <Button type="submit">
-                      {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                    </Button>
-                  </Box>
-                </form>
-              </Fragment>
-            )}
-            {activeStep === 1 && (
-              <React.Fragment>
-                <Typography sx={{ mt: 2, mb: 1 }}>
-                  Step {activeStep + 1}
-                </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                  <Button color="inherit" onClick={handleBack} sx={{ mr: 1 }}>
-                    Back
-                  </Button>
-                  <Box sx={{ flex: '1 1 auto' }} />
-
-                  <Button onClick={handleNext}>
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                  </Button>
-                </Box>
-              </React.Fragment>
-            )}
-            {activeStep === 2 && (
-              <React.Fragment>
-                <Typography sx={{ mt: 2, mb: 1 }}>
-                  Step {activeStep + 1}
-                </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
-                  <Button color="inherit" onClick={handleBack} sx={{ mr: 1 }}>
-                    Back
-                  </Button>
-                  <Box sx={{ flex: '1 1 auto' }} />
-
-                  <Button onClick={handleNext}>
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                  </Button>
-                </Box>
-              </React.Fragment>
-            )}
-          </Box>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+                      <Box  />
+                      <Button onClick={handleNext}>
+                        {activeStep === steps.length - 1 ? 'Finish' : 'Pay'}
+                      </Button>
+                    </Box>
+                  </Card>
+                </Col>
+              </Row>
+            </form>
+          )}
+          {activeStep === 1 && (
+            <React.Fragment>
+              <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+                <Button color="inherit" onClick={handleBack} sx={{ mr: 1 }}>
+                  Back
+                </Button>
+                <Box sx={{ flex: '1 1 auto' }} />
+                <Button onClick={handleNext}>
+                  {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                </Button>
+              </Box>
+            </React.Fragment>
+          )}
         </Col>
-        <Col xxl={2} xl={4} lg={4} md={0} sm={0}></Col>
+
+        <Col xxl={1} xl={1} lg={1} md={24} sm={24}></Col>
       </Row>
     </Container>
   );

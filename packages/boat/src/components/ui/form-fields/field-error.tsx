@@ -31,7 +31,7 @@ export default function FieldError({
       className={clsx(
         errorTextClasses.base,
         size && errorTextClasses.size[size],
-        className
+        className,
       )}
     >
       {error}

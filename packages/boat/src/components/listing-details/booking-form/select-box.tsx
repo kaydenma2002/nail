@@ -40,7 +40,7 @@ export default function SelectBox({
               <button
                 className={clsx(
                   'flex h-16 w-full cursor-pointer items-center justify-between rounded-b-lg border border-gray-lighter bg-white px-4 py-2.5 text-left uppercase text-gray-dark focus:outline-none xl:py-3',
-                  open && 'border-gray-dark ring-[1px] ring-gray-900/20'
+                  open && 'border-gray-dark ring-[1px] ring-gray-900/20',
                 )}
               >
                 <span className="block">
@@ -49,7 +49,7 @@ export default function SelectBox({
                 <span
                   className={clsx(
                     'transition-transform duration-200',
-                    open ? '-rotate-180' : 'rotate-0'
+                    open ? '-rotate-180' : 'rotate-0',
                   )}
                 >
                   <ArrowDownIcon className="h-4 w-4 font-bold text-gray" />
@@ -92,7 +92,7 @@ export default function SelectBox({
                   labelClassName="!text-sm xl:!text-base"
                   inputClassName={clsx(
                     pets &&
-                      '!border-gray-lightest focus:!ring-1 focus:!ring-offset-0 focus:!ring-gray-dark ring-1 !ring-gray-dark'
+                      '!border-gray-lightest focus:!ring-1 focus:!ring-offset-0 focus:!ring-gray-dark ring-1 !ring-gray-dark',
                   )}
                 />
                 <Radio
@@ -104,7 +104,7 @@ export default function SelectBox({
                   labelClassName="!text-sm xl:!text-base"
                   inputClassName={clsx(
                     !pets &&
-                      '!border-gray-lightest focus:!ring-1 focus:!ring-offset-0 focus:!ring-gray-dark ring-1 !ring-gray-dark'
+                      '!border-gray-lightest focus:!ring-1 focus:!ring-offset-0 focus:!ring-gray-dark ring-1 !ring-gray-dark',
                   )}
                 />
               </div>

@@ -43,7 +43,10 @@ export const searchStateKeyCheck = (state) => {
 };
 
 export const paginator = (posts, processedData, limit) => {
-  return [...posts, ...processedData.slice(posts.length, posts.length + limit)];
+  return [
+    ...posts,
+    ...processedData.slice(posts?.length, posts?.length + limit),
+  ];
 };
 
 export const getAPIData = async (apiUrl) => {

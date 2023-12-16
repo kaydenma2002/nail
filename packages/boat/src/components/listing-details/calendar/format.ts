@@ -18,7 +18,7 @@ export function Format(date: Date, str: string, non?: boolean) {
       case 'MM':
         return month + 1 < 10 && non ? '0' + `${month + 1}` : month + 1;
       case 'YY':
-        return year.slice(year.length - 2, year.length);
+        return year.slice(year?.length - 2, year?.length);
       case 'YYYY':
         return year;
     }

@@ -88,7 +88,7 @@ function SelectBoxCard({
 
 export default function Notifications() {
   const [notifications, setNotifications] = useState(
-    notificationsAllowed[0].id
+    notificationsAllowed[0].id,
   );
   const [state, setState] = useState(pushNotifications[0].id);
   return (

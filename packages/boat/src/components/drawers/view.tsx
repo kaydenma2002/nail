@@ -8,12 +8,12 @@ import Drawer from '@/components/ui/drawer';
 import clsx from 'clsx';
 
 const PhotoGallery = dynamic(
-  () => import('@/components/ui/drawers/photo-gallery')
+  () => import('@/components/ui/drawers/photo-gallery'),
 );
 const SideMenu = dynamic(() => import('@/components/ui/drawers/side-menu'));
 const Filter = dynamic(() => import('@/components/explore/filter'));
 const BookingFormModal = dynamic(
-  () => import('@/components/ui/drawers/booking-form-drawer')
+  () => import('@/components/ui/drawers/booking-form-drawer'),
 );
 
 export type DRAWER_VIEW =
@@ -67,7 +67,7 @@ export default function DrawerContainer() {
         customSize={drawerSate.customSize}
         containerClassName={clsx(
           drawerSate.view === 'BOOKING_FORM' && 'bg-white',
-          drawerSate.view === 'PHOTO_GALLERY' && 'bg-white overflow-y-auto'
+          drawerSate.view === 'PHOTO_GALLERY' && 'bg-white overflow-y-auto',
         )}
         onClose={() => setDrawerState({ ...drawerSate, isOpen: false })}
       >

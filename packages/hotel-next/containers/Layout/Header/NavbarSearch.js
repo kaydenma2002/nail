@@ -29,12 +29,12 @@ const NavbarSearch = () => {
     const mapData = !isEmpty(searchedPlaceAPIData)
       ? mapDataHelper(searchedPlaceAPIData)
       : [];
-    if (!isEmpty(mapData) && mapData.length !== 0) {
+    if (!isEmpty(mapData) && mapData?.length !== 0) {
       mapData.forEach((singleMapData) =>
         tempLocation.push({
           location_lat: singleMapData ? singleMapData.lat.toFixed(3) : null,
           location_lng: singleMapData ? singleMapData.lng.toFixed(3) : null,
-        })
+        }),
       );
     }
 

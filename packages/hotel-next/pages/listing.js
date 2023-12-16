@@ -29,14 +29,14 @@ import ListingWrapper, {
 } from 'containers/Listing/Listing.style';
 
 const FilterDrawer = dynamic(() =>
-  import('containers/Listing/Search/MobileSearchView')
+  import('containers/Listing/Search/MobileSearchView'),
 );
 
 export default function ListingPage({ processedData, deviceType }) {
   const { state, dispatch } = useContext(SearchContext);
   const statekey = searchStateKeyCheck(state);
   const [posts, setPosts] = useState(
-    processedData.slice(0, LISTING_PAGE_POST_LIMIT) || []
+    processedData.slice(0, LISTING_PAGE_POST_LIMIT) || [],
   );
   const [loading, setLoading] = useState(false);
   const [showMap, setShowMap] = useState(false);
@@ -100,7 +100,7 @@ export default function ListingPage({ processedData, deviceType }) {
           columnWidth={columnWidth}
           deviceType={deviceType}
           data={posts}
-          totalItem={processedData.length}
+          totalItem={processedData?.length}
           limit={LISTING_PAGE_POST_LIMIT}
           loading={loading}
           handleLoadMore={handleLoadMore}

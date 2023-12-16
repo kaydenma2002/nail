@@ -20,7 +20,7 @@ import { Element } from 'react-scroll';
 const Search = Input.Search;
 const CommentBox = (props) => {
   const { reviews } = props;
-  return reviews && reviews.length !== 0
+  return reviews && reviews?.length !== 0
     ? reviews.map((singleReview, i) => {
         return (
           <Fragment key={i}>

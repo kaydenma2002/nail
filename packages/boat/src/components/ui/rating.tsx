@@ -66,7 +66,7 @@ const Rate = forwardRef<any, RateProps>(
       className,
       ...props
     },
-    ref
+    ref,
   ) => {
     return (
       <div className={clsx('aegon-rate', className)}>
@@ -85,7 +85,7 @@ const Rate = forwardRef<any, RateProps>(
               className={clsx(
                 '[&>svg]:fill-current',
                 rateClasses.size[size],
-                characterClassName
+                characterClassName,
               )}
             >
               {Array.isArray(character)
@@ -98,14 +98,14 @@ const Rate = forwardRef<any, RateProps>(
             rateClasses.firstStar,
             rateClasses.color,
             !disabled && rateClasses.transition,
-            rateClassName
+            rateClassName,
           )}
           {...props}
         />
         {error && <p className="mt-1 text-xs text-red">{error}</p>}
       </div>
     );
-  }
+  },
 );
 
 Rate.displayName = 'Rate';

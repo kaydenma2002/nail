@@ -109,7 +109,7 @@ export default function Badge({
         classes.rounded[rounded],
         enableOutlineRing && classes.outlineRing,
         className,
-        { ...props }
+        { ...props },
       )}
     >
       {!renderAsDot ? children : null}

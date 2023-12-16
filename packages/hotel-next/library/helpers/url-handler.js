@@ -8,14 +8,14 @@ export function createUrl(urlData) {
       urlData[key] !== '' &&
       urlData[key] !== ',' &&
       urlData[key] !== undefined &&
-      urlData[key].length !== 0
+      urlData[key]?.length !== 0
     ) {
       // search[key] = urlData[key];
       search += `${key}=${urlData[key]}&`;
     }
   });
   // return search;
-  return search.substring(0, search.length - 1);
+  return search.substring(0, search?.length - 1);
 }
 
 export function setStateToUrl(state) {
@@ -45,7 +45,7 @@ export function setStateToUrl(state) {
           break;
         case 'amenities':
           urlData[key] =
-            state[key] && typeof state[key] !== 'string' && state[key].length
+            state[key] && typeof state[key] !== 'string' && state[key]?.length
               ? state[key].join()
               : state[key];
           break;
@@ -65,7 +65,7 @@ export function setStateToUrl(state) {
           break;
         case 'property':
           urlData[key] =
-            state[key] && typeof state[key] !== 'string' && state[key].length
+            state[key] && typeof state[key] !== 'string' && state[key]?.length
               ? state[key].join()
               : state[key];
           break;
@@ -117,7 +117,7 @@ export function setStateToUrl_ON_NEXT_JS_ROUTER_PUSH_VERSION(state) {
           break;
         case 'amenities':
           urlData[key] =
-            state[key] && typeof state[key] !== 'string' && state[key].length
+            state[key] && typeof state[key] !== 'string' && state[key]?.length
               ? state[key].join()
               : state[key];
           break;
@@ -137,7 +137,7 @@ export function setStateToUrl_ON_NEXT_JS_ROUTER_PUSH_VERSION(state) {
           break;
         case 'property':
           urlData[key] =
-            state[key] && typeof state[key] !== 'string' && state[key].length
+            state[key] && typeof state[key] !== 'string' && state[key]?.length
               ? state[key].join()
               : state[key];
           break;

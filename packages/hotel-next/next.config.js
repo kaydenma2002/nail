@@ -9,7 +9,7 @@ module.exports = {
     config.plugins.push(
       new FilterWarningsPlugin({
         exclude: /mini-css-extract-plugin[^]*Conflicting order between:/,
-      })
+      }),
     );
     config.resolve.modules.push(__dirname);
 

@@ -40,7 +40,7 @@ export default function GalleryCarousel({
       >
         <div className="ml-auto flex w-1/2 items-center justify-between px-4 py-5 md:pl-0 md:pr-8 2xl:py-8">
           <div className="-translate-x-1/2 font-semibold text-white xl:text-xl">
-            {state ? state + 1 : 1}/{vendorData.gallary.length}
+            {state ? state + 1 : 1}/{vendorData.gallary?.length}
           </div>
           <Button
             variant="outline"

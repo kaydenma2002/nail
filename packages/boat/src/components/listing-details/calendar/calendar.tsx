@@ -24,18 +24,18 @@ export default function Calendar({
   useEffect(() => {
     const arr = [...nShow];
     while (true) {
-      if (arr.length === noMonth) {
+      if (arr?.length === noMonth) {
         break;
       }
-      if (arr[arr.length - 1].m === 11) {
+      if (arr[arr?.length - 1].m === 11) {
         arr.push({
           m: 0,
-          y: arr[arr.length - 1].y + 1,
+          y: arr[arr?.length - 1].y + 1,
         });
       } else {
         arr.push({
-          m: arr[arr.length - 1].m + 1,
-          y: arr[arr.length - 1].y,
+          m: arr[arr?.length - 1].m + 1,
+          y: arr[arr?.length - 1].y,
         });
       }
     }

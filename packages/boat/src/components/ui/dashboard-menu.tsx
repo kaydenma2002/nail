@@ -37,7 +37,7 @@ export default function DashboardMenu() {
               href={item.path}
               className={clsx(
                 'inline-block text-base font-normal capitalize text-gray-dark',
-                pathname === item.path && '!font-bold'
+                pathname === item.path && '!font-bold',
               )}
             >
               {item.text}

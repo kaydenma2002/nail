@@ -198,18 +198,18 @@ const CategorySearchNext = (props) => {
 
   if (current && current.amenities && typeof current.amenities === 'string') {
     amenities = current.amenities.split(',');
-    amenitiesLength = amenities.length;
-  } else if (current && current.amenities && current.amenities.length) {
+    amenitiesLength = amenities?.length;
+  } else if (current && current.amenities && current.amenities?.length) {
     amenities = current.amenities;
-    amenitiesLength = amenities.length;
+    amenitiesLength = amenities?.length;
   }
 
   if (current && current.property && typeof current.property === 'string') {
     property = current.property.split(',');
-    propertyLength = property.length;
-  } else if (current && current.property && current.property.length) {
+    propertyLength = property?.length;
+  } else if (current && current.property && current.property?.length) {
     property = current.property;
-    propertyLength = current.property.length;
+    propertyLength = current.property?.length;
   }
 
   return (

@@ -41,7 +41,7 @@ export default function InputIconOnClear({
           inputIconClearClasses.size[size],
           hasSuffix && inputIconClearClasses.hasSuffix[size],
         ],
-        className
+        className,
       )}
     >
       {/* HeroIcon: x-mark */}

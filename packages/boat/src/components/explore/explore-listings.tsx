@@ -34,7 +34,7 @@ export default function ExploreListings() {
           />
         ))}
       </div>
-      {topBoats.length >= list && (
+      {topBoats?.length >= list && (
         <Button
           size="xl"
           type="button"

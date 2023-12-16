@@ -27,7 +27,7 @@ export default function LocationInputFilter() {
     });
     updateQueryparams(
       'location',
-      places && places[0] && places[0].formatted_address
+      places && places[0] && places[0].formatted_address,
     );
   };
 

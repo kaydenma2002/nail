@@ -53,7 +53,7 @@ export default function ProductCard({
           }}
         />
       }
-      location={location.formattedAddress}
+      location={location?.formattedAddress}
       title={title}
       price={`$${price}/Night - Free Cancellation`}
       rating={<Rating rating={rating} ratingCount={ratingCount} type="bulk" />}

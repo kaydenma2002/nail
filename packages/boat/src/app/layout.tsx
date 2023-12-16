@@ -32,7 +32,7 @@ export default function RootLayout({ children }: React.PropsWithChildren<{}>) {
       className={clsx(
         'h-full font-lato antialiased',
         satisfy.variable,
-        lato.variable
+        lato.variable,
       )}
     >
       <head />

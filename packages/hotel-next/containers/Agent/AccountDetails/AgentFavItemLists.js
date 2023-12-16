@@ -21,7 +21,7 @@ export default function AgentFavItemLists({
       columnWidth={[1 / 1, 1 / 2, 1 / 3, 1 / 4, 1 / 5, 1 / 6]}
       deviceType={deviceType}
       data={favourite_post}
-      totalItem={favourite_post.length}
+      totalItem={favourite_post?.length}
       limit={FAVOURITE_POST_LIMIT}
       loading={loading}
       handleLoadMore={loadMoreData}

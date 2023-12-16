@@ -37,7 +37,7 @@ export default function Months({
   useEffect(() => {
     const { currentMonth, currentData } = getDaysInMonth(
       changeMonth.showMonth,
-      changeMonth.showYear
+      changeMonth.showYear,
     );
     let newCurrentData = currentData?.map((item) => {
       let c = item.time;

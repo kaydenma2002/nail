@@ -166,7 +166,7 @@ const Upload = forwardRef<HTMLInputElement, UploadProps>(
       itemClassName,
       ...props
     },
-    ref
+    ref,
   ) => {
     const [files, setFiles] = useState<Array<File>>([]);
 
@@ -210,7 +210,7 @@ const Upload = forwardRef<HTMLInputElement, UploadProps>(
               inputClasses.variant[variant].base,
               inputClasses.variant[variant].color[color],
               disabled && inputClasses.disabled,
-              className
+              className,
             ),
           })}
         >
@@ -220,7 +220,7 @@ const Upload = forwardRef<HTMLInputElement, UploadProps>(
               variant !== 'outline' && !disabled
                 ? inputClasses.lightTextColor[color]
                 : 'text-gray-300',
-              iconClassName
+              iconClassName,
             )}
           />
           {text || (
@@ -229,7 +229,7 @@ const Upload = forwardRef<HTMLInputElement, UploadProps>(
                 className={clsx(
                   'font-medium underline',
                   variant !== 'outline' && inputClasses.darkTextColor[color],
-                  disabled && '!text-gray-400'
+                  disabled && '!text-gray-400',
                 )}
               >
                 Click to upload
@@ -246,7 +246,7 @@ const Upload = forwardRef<HTMLInputElement, UploadProps>(
             className={clsx(
               'mt-5',
               accept === 'img' && listClasses.container,
-              listClassName
+              listClassName,
             )}
           >
             {files.map((file: FileWithPath, index: number) => (
@@ -255,7 +255,7 @@ const Upload = forwardRef<HTMLInputElement, UploadProps>(
                   accept === 'img'
                     ? listClasses.img.base
                     : listClasses.pdf.base,
-                  itemClassName
+                  itemClassName,
                 )}
                 key={file.path}
               >
@@ -277,7 +277,7 @@ const Upload = forwardRef<HTMLInputElement, UploadProps>(
                     'absolute h-5 w-5',
                     accept === 'img'
                       ? listClasses.img.icon
-                      : listClasses.pdf.icon
+                      : listClasses.pdf.icon,
                   )}
                   onClick={() => handleDelete(index)}
                 />
@@ -287,7 +287,7 @@ const Upload = forwardRef<HTMLInputElement, UploadProps>(
         )}
       </section>
     );
-  }
+  },
 );
 
 Upload.displayName = 'Upload';

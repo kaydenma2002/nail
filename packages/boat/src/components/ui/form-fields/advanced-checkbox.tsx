@@ -42,7 +42,7 @@ const AdvancedCheckbox = forwardRef<HTMLInputElement, AdvancedCheckboxProps>(
       errorClassName,
       ...props
     },
-    ref
+    ref,
   ) => (
     <div className="aegon-advanced-checkbox">
       <label className={clsx('relative flex items-center', labelClassName)}>
@@ -63,7 +63,7 @@ const AdvancedCheckbox = forwardRef<HTMLInputElement, AdvancedCheckboxProps>(
         <FieldError size={'DEFAULT'} error={error} className={errorClassName} />
       )}
     </div>
-  )
+  ),
 );
 
 AdvancedCheckbox.displayName = 'AdvancedCheckbox';

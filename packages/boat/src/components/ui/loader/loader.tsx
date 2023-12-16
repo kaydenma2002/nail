@@ -67,7 +67,7 @@ export default function Loader({
           'rounded-full',
           sizes[size],
           colors[color],
-          animations[animation]
+          animations[animation],
         )}
       />
       <span
@@ -75,7 +75,7 @@ export default function Loader({
           'animation-delay-200 rounded-full',
           sizes[size],
           colors[color],
-          animations[animation]
+          animations[animation],
         )}
       />
       <span
@@ -83,7 +83,7 @@ export default function Loader({
           'animation-delay-500 rounded-full',
           sizes[size],
           colors[color],
-          animations[animation]
+          animations[animation],
         )}
       />
     </Component>

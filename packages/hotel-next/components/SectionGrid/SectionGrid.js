@@ -46,12 +46,12 @@ export default function SectionGrid({
   const n = limit ? Number(limit) : 1;
   const limits = Array(n).fill(0);
 
-  let showButton = data.length < totalItem;
+  let showButton = data?.length < totalItem;
 
   return (
     <>
       <Box className="grid_wrapper" {...rowStyle}>
-        {data && data.length
+        {data && data?.length
           ? data.map((item) => {
               return (
                 <Box

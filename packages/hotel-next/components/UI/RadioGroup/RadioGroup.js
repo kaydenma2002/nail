@@ -20,7 +20,7 @@ RadioGroup.propTypes = {
       id: PropTypes.string,
       label: PropTypes.string,
       value: PropTypes.string,
-    })
+    }),
   ),
 };
 

@@ -12,7 +12,7 @@ async function SuperFetch(
   headers = {
     'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
   },
-  body = {}
+  body = {},
 ) {
   NProgress.start();
   // await sleep(1000); // demo purpose only
@@ -61,8 +61,8 @@ function dataFetchReducer(state, action) {
         data: [
           ...state.data,
           ...state.total.slice(
-            state.data.length,
-            state.data.length + state.limit
+            state.data?.length,
+            state.data?.length + state.limit,
           ),
         ],
         loading: false,

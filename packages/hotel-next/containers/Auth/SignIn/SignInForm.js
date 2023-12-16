@@ -17,6 +17,7 @@ export default function SignInForm() {
   } = useForm();
   const onSubmit = (data) => {
     signIn(data);
+    console.log(data)
   };
 
   return (

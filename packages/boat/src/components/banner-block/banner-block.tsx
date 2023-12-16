@@ -34,13 +34,13 @@ export default function BannerBlock({
       tag="div"
       className={clsx(
         'container-fluid my-12 !px-0 md:!px-6 lg:my-16 2xl:!px-7 3xl:!px-8',
-        sectionClassName
+        sectionClassName,
       )}
     >
       <div
         className={clsx(
           'relative md:px-12 md:py-12 lg:px-14 xl:px-20 xl:py-16 3xl:px-32 3xl:py-20 4xl:px-40 4xl:py-[88px]',
-          className
+          className,
         )}
       >
         <Image
@@ -48,7 +48,7 @@ export default function BannerBlock({
           alt="Call to action Banner"
           className={clsx(
             'aspect-[18/5] bg-gray-lighter object-cover md:max-h-full md:rounded-2xl',
-            bgImgClassName
+            bgImgClassName,
           )}
           quality={100}
           fill
@@ -57,7 +57,7 @@ export default function BannerBlock({
           <h2
             className={clsx(
               'text-center text-2xl font-bold text-white md:text-left md:text-3xl xl:mb-6 3xl:text-5xl',
-              titleClassName
+              titleClassName,
             )}
           >
             {title}
@@ -65,7 +65,7 @@ export default function BannerBlock({
           <p
             className={clsx(
               'mb-7 leading-[1.78] text-white md:text-base xl:mb-10 3xl:text-lg',
-              descriptionClassName
+              descriptionClassName,
             )}
           >
             {description}

@@ -130,7 +130,7 @@ export default function PersonalInfoForm() {
                     placeholderText="dd/mm/yyyy"
                     inputClassName={clsx(
                       state &&
-                        '!border !border-gray-dark !ring-[1px] !ring-gray-900/20'
+                        '!border !border-gray-dark !ring-[1px] !ring-gray-900/20',
                     )}
                     onCalendarOpen={() => setState(true)}
                     onCalendarClose={() => setState(false)}

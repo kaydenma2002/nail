@@ -68,7 +68,7 @@ function List({ navListItem }: navListTypes) {
               'flex items-center gap-3 px-10 py-4 text-base capitalize text-gray-dark hover:bg-gray-lightest',
               {
                 'bg-gray-lightest': pathname === item.path,
-              }
+              },
             )}
           >
             {item.icon}

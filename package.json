@@ -33,5 +33,11 @@
     "prettier": "^2.8.8",
     "rimraf": "^3.0.2",
     "serve": "^14.2.0"
+  },
+  "dependencies": {
+    "postcss-normalize": "^10.0.1",
+    "react-country-dropdown": "^1.1.0",
+    "sweetalert2": "^11.10.1",
+    "volkeno-react-country-state-city": "^1.0.0"
   }
 }

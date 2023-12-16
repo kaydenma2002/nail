@@ -76,7 +76,9 @@ const SearchForm = () => {
     mapData &&
       mapData.map((singleMapData, i) => {
         return tempLocation.push({
-          formattedAddress: singleMapData ? singleMapData.formattedAddress : '',
+          formattedAddress: singleMapData
+            ? singleMapData?.formattedAddress
+            : '',
           lat: singleMapData ? singleMapData.lat.toFixed(3) : null,
           lng: singleMapData ? singleMapData.lng.toFixed(3) : null,
         });
@@ -130,7 +132,7 @@ const SearchForm = () => {
         pathname: `${LISTING_POSTS_PAGE}`,
         query: query,
       },
-      { shallow: true }
+      { shallow: true },
     );
   };
 

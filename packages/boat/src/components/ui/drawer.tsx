@@ -74,7 +74,7 @@ export default function Drawer({
       customSize?.match(CHECK_VALID_CUSTOM_SIZE) ?? [];
     if (checkedCustomSizeValue[0] === '') {
       console.warn(
-        'customSize prop value is not valid. Please set customSize prop like this customSize="500px" or customSize="50%"'
+        'customSize prop value is not valid. Please set customSize prop like this customSize="500px" or customSize="50%"',
       );
     }
   }
@@ -97,7 +97,7 @@ export default function Drawer({
           <Dialog.Overlay
             className={clsx(
               'fixed inset-0 cursor-pointer bg-gray-1000 bg-opacity-60 backdrop-blur transition-opacity dark:bg-opacity-80',
-              overlayClassName
+              overlayClassName,
             )}
           />
         </Transition.Child>
@@ -131,7 +131,7 @@ export default function Drawer({
                   ? drawerClasses.sizeOfTopBottom[size]
                   : drawerClasses.sizeOfLeftRight[size],
               ],
-              containerClassName
+              containerClassName,
             )}
             {...(customSize && {
               style: {

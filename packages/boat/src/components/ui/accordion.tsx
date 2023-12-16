@@ -22,7 +22,7 @@ export default function Accordion({ title, text }: AccordionProps) {
         <span
           className={clsx(
             'transform transition-all duration-200',
-            open ? 'rotate-180' : 'rotate-0'
+            open ? 'rotate-180' : 'rotate-0',
           )}
         >
           {open ? (

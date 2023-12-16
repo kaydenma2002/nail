@@ -41,7 +41,7 @@ const GlideCarousel = ({
       carouselSelector ? `#${carouselSelector}` : '#glide',
       {
         ...options,
-      }
+      },
     );
     glide.mount();
   }, [carouselSelector, options]);

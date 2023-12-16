@@ -14,7 +14,7 @@ const Location = ({
   linkStyle,
   location,
 }) => {
-  const formattedAddress = location.formattedAddress;
+  const formattedAddress = location?.formattedAddress;
   return (
     <Element name="location" className="location">
       <LocationWrapper>

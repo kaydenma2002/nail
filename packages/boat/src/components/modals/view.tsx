@@ -13,10 +13,10 @@ const SignIn = dynamic(() => import('@/components/auth/sign-in'));
 const SignUp = dynamic(() => import('@/components/auth/sign-up'));
 const AddReview = dynamic(() => import('@/components/ui/modals/add-review'));
 const ReportListing = dynamic(
-  () => import('@/components/ui/modals/report-listing')
+  () => import('@/components/ui/modals/report-listing'),
 );
 const ContactHost = dynamic(
-  () => import('@/components/ui/modals/contact-host')
+  () => import('@/components/ui/modals/contact-host'),
 );
 const ShareModal = dynamic(() => import('@/components/ui/modals/share-modal'));
 const Searchbox = dynamic(() => import('@/components/ui/search-box'));
@@ -55,7 +55,7 @@ export default function ModalContainer() {
         as="div"
         className={clsx(
           'fixed inset-0 z-[9999] h-full w-full overflow-y-auto overflow-x-hidden bg-gray-dark bg-opacity-40 p-4 text-center',
-          view === 'LIGHT_GALLERY' && '!bg-opacity-100'
+          view === 'LIGHT_GALLERY' && '!bg-opacity-100',
         )}
         onClose={closeModal}
       >
