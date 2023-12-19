@@ -61,7 +61,7 @@ export function CardComponent(props) {
           <Col span={10}>
             <img
               alt="example"
-              src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+              src="../../../../public/images/nail/1/1.jpg"
             />
           </Col>
           <Col span={14}>

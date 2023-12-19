@@ -34,7 +34,12 @@ export default function SignInForm() {
         });
       })
       .catch((err) => {
-        console.log(err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Login fail',
+          text: `${err.response.data.detail}`,
+          
+        })
       });
   };
   if (loggedIn) {

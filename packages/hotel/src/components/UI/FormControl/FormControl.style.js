@@ -155,7 +155,7 @@ const Wrapper = styled.div`
   button[type='submit'] {
     border-radius: 3px;
     height: 47px;
-    
+
     font-size: 15px;
     font-weight: 700;
     text-transform: capitalize;

@@ -538,9 +538,9 @@ export default function HorizontalLinearStepper() {
                     >
                       <Box />
                       <FormControl>
-                        <Button variant='outline'  type="submit">
+                        <Button variant="outline" type="submit">
                           {activeStep === steps.length - 1 ? 'Finish' : 'Pay'}
-                          </Button>
+                        </Button>
                       </FormControl>
                     </Box>
                   </Card>
