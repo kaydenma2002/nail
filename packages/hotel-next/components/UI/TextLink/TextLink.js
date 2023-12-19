@@ -18,7 +18,7 @@ const LinkWrapper = styled(Link)(
   textAlign,
   lineHeight,
   letterSpacing,
-  themed('TextLink'),
+  themed('TextLink')
 );
 
 const TextLink = ({ link, content, ...props }) => {
@@ -38,35 +38,35 @@ TextLink.propTypes = {
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     ),
   ]),
   fontWeight: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     ),
   ]),
   textAlign: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     ),
   ]),
   lineHeight: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     ),
   ]),
   letterSpacing: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.arrayOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     ),
   ]),
   ...base.propTypes,

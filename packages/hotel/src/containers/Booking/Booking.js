@@ -440,7 +440,6 @@ export default function HorizontalLinearStepper() {
                             />
                           </FormControl>
                         </Col>
-                        
                       </Row>
                       <Row gutter={30}>
                         <Col lg={12} xs={24}>
@@ -475,16 +474,13 @@ export default function HorizontalLinearStepper() {
                             label="CVC"
                             htmlFor="cvc"
                             error={
-                              errors.cvc && (
-                                <span>This field is required!</span>
-                              )
+                              errors.cvc && <span>This field is required!</span>
                             }
                           >
                             <Controller
                               name="cvc"
                               control={control}
                               rules={{ required: true }}
-                              
                               render={({
                                 field: { onChange, onBlur, value },
                               }) => (
@@ -531,14 +527,21 @@ export default function HorizontalLinearStepper() {
                           </FormControl>
                         </Col>
                       </Row>
-                      
                     </Fragment>
 
-                    <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
-                      <Box  />
-                      <Button onClick={handleNext}>
-                        {activeStep === steps.length - 1 ? 'Finish' : 'Pay'}
-                      </Button>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        marginTop: '20px',
+                      }}
+                    >
+                      <Box />
+                      <FormControl>
+                        <Button variant='outline'  type="submit">
+                          {activeStep === steps.length - 1 ? 'Finish' : 'Pay'}
+                          </Button>
+                      </FormControl>
                     </Box>
                   </Card>
                 </Col>

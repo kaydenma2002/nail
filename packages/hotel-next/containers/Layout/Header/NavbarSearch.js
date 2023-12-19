@@ -34,7 +34,7 @@ const NavbarSearch = () => {
         tempLocation.push({
           location_lat: singleMapData ? singleMapData.lat.toFixed(3) : null,
           location_lng: singleMapData ? singleMapData.lng.toFixed(3) : null,
-        }),
+        })
       );
     }
 

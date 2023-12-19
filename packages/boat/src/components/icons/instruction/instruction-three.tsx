@@ -1,5 +1,5 @@
 export const InstructionIconThree: React.FC<React.SVGAttributes<{}>> = (
-  props,
+  props
 ) => {
   return (
     <svg

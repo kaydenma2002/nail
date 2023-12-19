@@ -97,7 +97,7 @@ export default function BookingForm({
       onSubmit={handleSubmit((data) => handleBooking(data))}
       className={clsx(
         'rounded-xl border border-gray-lighter bg-white p-8 shadow-card',
-        className,
+        className
       )}
     >
       <div className="flex items-center justify-between gap-3  ">
@@ -121,14 +121,14 @@ export default function BookingForm({
       <div
         className={clsx(
           'relative mt-6 grid grid-cols-2 gap-3 rounded-t-lg border border-b-0 border-gray-lighter',
-          focus && '!border-b !border-gray-dark ring-[1px] ring-gray-900/20',
+          focus && '!border-b !border-gray-dark ring-[1px] ring-gray-900/20'
         )}
         onBlur={() => setFocus(false)}
       >
         <span
           className={clsx(
             'absolute inset-y-0 left-1/2 translate-x-1/2 border-r border-gray-lighter',
-            focus && '!border-gray-dark',
+            focus && '!border-gray-dark'
           )}
         ></span>
         <span className="absolute left-4 top-3 inline-block -translate-x-3 scale-75 text-sm font-semibold uppercase text-gray-dark">

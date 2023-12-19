@@ -9,7 +9,7 @@ export default function FreeCancellation() {
   const searchParams = useSearchParams();
   const cancel = searchParams?.get('freeCancellation');
   const [freeCancellation, setFreeCancellation] = useState<boolean>(
-    Boolean(cancel),
+    Boolean(cancel)
   );
   const { updateQueryparams } = useQueryParam();
 

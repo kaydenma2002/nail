@@ -65,7 +65,7 @@ export default function SelectBox({
         htmlFor="countries_disabled"
         className={clsx(
           'block text-base font-bold text-gray-dark',
-          labelClassName,
+          labelClassName
         )}
       >
         {label}
@@ -78,7 +78,7 @@ export default function SelectBox({
                 buttonClasses.base,
                 buttonClasses.variant[variant].base,
                 buttonClassName,
-                open && '!border-gray-1000 !ring-[1px] !ring-gray-900/20',
+                open && '!border-gray-1000 !ring-[1px] !ring-gray-900/20'
               )}
             >
               {optionIcon && <span className="block pr-4">{value.icon}</span>}
@@ -88,7 +88,7 @@ export default function SelectBox({
                   'absolute inset-y-0 flex items-center transition-transform duration-200',
                   arrowIconClasses[variant],
                   open && 'rotate-180',
-                  arrowIconClassName,
+                  arrowIconClassName
                 )}
               >
                 <ChevronDownIcon
@@ -104,7 +104,7 @@ export default function SelectBox({
                       onClick={onClearClick}
                       className={clsx(
                         'absolute right-12 top-1/2 -translate-y-1/2 bg-transparent',
-                        ClearableClassName,
+                        ClearableClassName
                       )}
                     />
                   )}
@@ -122,7 +122,7 @@ export default function SelectBox({
           <Listbox.Options
             className={clsx(
               'absolute top-full z-20 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm',
-              optionsContainerClassName,
+              optionsContainerClassName
             )}
           >
             {options.map((item, index) => (

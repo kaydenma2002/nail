@@ -38,7 +38,7 @@ export interface DateTimeProps<selectsRange extends boolean | undefined>
     date: selectsRange extends false | undefined
       ? Date | null
       : [Date | null, Date | null],
-    event: React.SyntheticEvent<any> | undefined,
+    event: React.SyntheticEvent<any> | undefined
   ): void;
   /** Whether range selecting is enabled */
   selectsRange?: selectsRange;
@@ -84,7 +84,7 @@ const DateTime = ({
       <label
         className={clsx(
           'block   text-base font-bold text-gray-dark',
-          labelClassName,
+          labelClassName
         )}
       >
         {label}
@@ -118,7 +118,7 @@ const DateTime = ({
           prevNextButtonClasses.children.border,
           prevNextButtonClasses.children.size,
           timeOnlyClasses.base,
-          calendarClassName,
+          calendarClassName
         )}
         {...props}
       />

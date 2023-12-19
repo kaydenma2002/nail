@@ -121,7 +121,7 @@ export default function ContactHost() {
                 inputClassName={clsx(
                   '!text-gray text-xs xl:text-sm sm:pl-12',
                   state &&
-                    '!border !border-gray-1000 !ring-[1px] !ring-gray-900/20',
+                    '!border !border-gray-1000 !ring-[1px] !ring-gray-900/20'
                 )}
                 labelClassName="!text-sm md:!text-base mb-1.5"
                 onCalendarOpen={() => setState(true)}
@@ -149,7 +149,7 @@ export default function ContactHost() {
                 inputClassName={clsx(
                   '!text-gray text-xs xl:text-sm sm:pl-12',
                   stateTwo &&
-                    '!border !border-gray-1000 !ring-[1px] !ring-gray-900/20',
+                    '!border !border-gray-1000 !ring-[1px] !ring-gray-900/20'
                 )}
                 labelClassName="!text-sm md:!text-base mb-1.5"
                 onCalendarOpen={() => setStateTwo(true)}

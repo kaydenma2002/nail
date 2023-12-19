@@ -208,7 +208,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       helperText,
       ...inputProps
     },
-    ref,
+    ref
   ) => {
     const variantStyle = inputClasses.variant[variant];
     return (
@@ -224,7 +224,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           <div
             className={clsx(
               'relative',
-              (startIcon || endIcon || clearable) && inputClasses.size[size],
+              (startIcon || endIcon || clearable) && inputClasses.size[size]
             )}
           >
             {startIcon && (
@@ -235,7 +235,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                     ? 'z-[2] cursor-pointer'
                     : 'pointer-events-none',
                   inputClassesWithIcon.iconSize[size],
-                  startIconClassName,
+                  startIconClassName
                 )}
               >
                 {startIcon}
@@ -265,7 +265,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 startIcon && inputClassesWithIcon.startPadding.size[size],
                 endIcon && inputClassesWithIcon.endPadding.size[size],
                 error && inputClasses.error,
-                inputClassName,
+                inputClassName
               )}
               {...inputProps}
             />
@@ -276,7 +276,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 hasSuffix={Boolean(endIcon)}
                 className={clsx(
                   'absolute right-2 top-1/2 -translate-y-1/2',
-                  inputClearableClasses,
+                  inputClearableClasses
                 )}
               />
             )}
@@ -287,7 +287,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                   endIconClickable
                     ? 'z-[2] cursor-pointer'
                     : 'pointer-events-none',
-                  inputClassesWithIcon.iconSize[size],
+                  inputClassesWithIcon.iconSize[size]
                 )}
               >
                 {endIcon}
@@ -305,7 +305,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 Input.displayName = 'Input';

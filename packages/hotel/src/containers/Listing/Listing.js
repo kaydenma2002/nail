@@ -85,7 +85,15 @@ export default function Listing(props) {
         {data.map((item, index) => (
           <Row gutter={[16, 16]} key={index} justify="center">
             <Col xs={2} sm={4} md={6} lg={8} xl={7}></Col>
-            <Col style={{padding:'1rem'}} span={6} xs={20} sm={16} md={12} lg={8} xl={8}>
+            <Col
+              style={{ padding: '1rem' }}
+              span={6}
+              xs={20}
+              sm={16}
+              md={12}
+              lg={8}
+              xl={8}
+            >
               <CardComponent
                 name={item.name}
                 address={item.full_address}

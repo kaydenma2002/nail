@@ -22,8 +22,8 @@ export default function ReservationsPage() {
     if (searchfilter) {
       setData(
         fArr.filter((item) =>
-          item.customer.name.toLowerCase().includes(searchfilter.toLowerCase()),
-        ),
+          item.customer.name.toLowerCase().includes(searchfilter.toLowerCase())
+        )
       );
     } else {
       let start = (current - 1) * 10;
@@ -62,7 +62,7 @@ export default function ReservationsPage() {
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    [data],
+    [data]
   );
 
   // single select checkbox function
@@ -77,7 +77,7 @@ export default function ReservationsPage() {
       setData(cArr);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    [data],
+    [data]
   );
 
   // handle more button with edit, preview, delete
@@ -101,7 +101,7 @@ export default function ReservationsPage() {
       },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [data],
+    [data]
   );
 
   // gets the columns of table
@@ -113,9 +113,9 @@ export default function ReservationsPage() {
         onSelectAll,
         onChange,
         onMore,
-        onHeaderClick,
+        onHeaderClick
       ),
-    [order, column, onSelectAll, onChange, onMore, onHeaderClick],
+    [order, column, onSelectAll, onChange, onMore, onHeaderClick]
   );
 
   return (

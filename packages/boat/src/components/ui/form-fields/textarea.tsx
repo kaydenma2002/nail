@@ -168,7 +168,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       helperText,
       ...textareaProps
     },
-    ref,
+    ref
   ) => {
     const variantStyle = textareaClasses.variant[variant];
     return (
@@ -190,7 +190,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
               variantStyle.base,
               variantStyle.color[color],
               error && textareaClasses.error,
-              textareaClassName,
+              textareaClassName
             )}
             {...textareaProps}
           />
@@ -205,7 +205,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 Textarea.displayName = 'Textarea';

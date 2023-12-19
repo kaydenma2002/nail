@@ -1,5 +1,5 @@
 export const MobileMenuSearchIcon: React.FC<React.SVGAttributes<{}>> = (
-  props,
+  props
 ) => {
   return (
     <svg

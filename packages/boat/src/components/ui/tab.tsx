@@ -25,7 +25,7 @@ export function TabItem({
         clsx(
           'relative pb-4 text-sm capitalize tracking-wide text-gray focus:outline-none lg:text-base',
           selected && 'tab-text-shadow !text-white',
-          className,
+          className
         )
       }
       {...props}
@@ -37,7 +37,7 @@ export function TabItem({
             <motion.span
               className={clsx(
                 'absolute bottom-0 left-0 right-0 z-10 h-0.5 w-full rounded-full bg-gray-dark lg:h-1',
-                motionClassName,
+                motionClassName
               )}
               layoutId={motionLayoutId}
             />

@@ -98,7 +98,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
       isDisabled = false,
       ...radioProps
     },
-    ref,
+    ref
   ) => {
     return (
       <div className={clsx(className)}>
@@ -106,7 +106,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
         <div
           className={clsx(
             containerClasses.base,
-            containerClasses.labelPlacement[labelPlacement],
+            containerClasses.labelPlacement[labelPlacement]
           )}
         >
           <div
@@ -115,7 +115,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
               radioDivClasses.customSize[customSize],
               !isDisabled && radioDivClasses.color[color],
               labelPlacement === 'start' &&
-                radioDivClasses.labelPlacement[labelPlacement],
+                radioDivClasses.labelPlacement[labelPlacement]
             )}
           >
             <input
@@ -127,7 +127,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
                 radioClasses.base,
                 radioClasses.customSize[customSize],
                 radioClasses.color[color],
-                inputClassName,
+                inputClassName
               )}
               {...radioProps}
             />
@@ -142,7 +142,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
                 labelPlacement === 'start' &&
                   labelClasses.labelPlacement[labelPlacement],
                 isDisabled && labelClasses.disabled,
-                labelClassName,
+                labelClassName
               )}
             >
               {label}
@@ -151,7 +151,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(
         </div>
       </div>
     );
-  },
+  }
 );
 
 Radio.displayName = 'Radio';

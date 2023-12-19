@@ -30,7 +30,7 @@ export const reservationColumn = (
   onSelectAll: (key: boolean) => any,
   onChange: (row: any) => any,
   onMore: (e: any, row: any) => any,
-  onHeaderClick: (value: string) => any,
+  onHeaderClick: (value: string) => any
 ) => [
   {
     title: (

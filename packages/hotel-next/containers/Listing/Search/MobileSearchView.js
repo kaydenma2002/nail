@@ -336,7 +336,7 @@ const FilterDrawer = (props) => {
                         setRoom((countRoom) => countRoom > 0 && countRoom - 1);
                         onChange(
                           (countRoom) => countRoom > 0 && countRoom - 1,
-                          'room',
+                          'room'
                         );
                       }}
                       value={countRoom}
@@ -353,11 +353,11 @@ const FilterDrawer = (props) => {
                       }}
                       decrement={() => {
                         setGuest(
-                          (countGuest) => countGuest > 0 && countGuest - 1,
+                          (countGuest) => countGuest > 0 && countGuest - 1
                         );
                         onChange(
                           (countGuest) => countGuest > 0 && countGuest - 1,
-                          'guest',
+                          'guest'
                         );
                       }}
                       value={countGuest}

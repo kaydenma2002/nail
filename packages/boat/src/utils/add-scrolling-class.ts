@@ -4,7 +4,7 @@
 import { useEffect, RefObject } from 'react';
 export function addScrollingClass<T extends HTMLElement = HTMLElement>(
   ref: RefObject<T>,
-  topOffset: number = 80,
+  topOffset: number = 80
 ) {
   useEffect(() => {
     const element = ref?.current;

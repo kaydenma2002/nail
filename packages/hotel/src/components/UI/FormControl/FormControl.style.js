@@ -155,8 +155,7 @@ const Wrapper = styled.div`
   button[type='submit'] {
     border-radius: 3px;
     height: 47px;
-    border-color: ${themeGet('primary.0', '#000000')};
-    background-color: ${themeGet('primary.0', '#000000')};
+    
     font-size: 15px;
     font-weight: 700;
     text-transform: capitalize;

@@ -10,7 +10,7 @@ export default function ProgressBar() {
     <div
       className={clsx(
         'fixed inset-x-0 bottom-[60px] z-20 w-full bg-gray-lighter lg:bottom-[72px]',
-        step === 7 && 'hidden',
+        step === 7 && 'hidden'
       )}
     >
       <span

@@ -42,7 +42,7 @@ export default function ChatSidebar({
       <div>
         {people
           .filter((item) =>
-            item.name.toLowerCase().includes(searchfilter.toLowerCase()),
+            item.name.toLowerCase().includes(searchfilter.toLowerCase())
           )
           .map((item) => (
             <div
@@ -50,7 +50,7 @@ export default function ChatSidebar({
               onClick={() => onClick && onClick(item.id)}
               className={clsx(
                 'flex cursor-pointer items-center px-5 py-3 hover:bg-white',
-                item.id === currentChat.id && activeChatClassName,
+                item.id === currentChat.id && activeChatClassName
               )}
             >
               <Avatar src={item.image} size="40" />

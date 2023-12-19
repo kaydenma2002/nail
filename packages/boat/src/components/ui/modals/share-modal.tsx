@@ -51,7 +51,7 @@ export default function ShareModal() {
   const { closeModal } = useModal();
   const [copied, setCopied] = useState(false);
   const [state, setState] = useState(
-    'https://www.figma.com/file/NlfVhYygR9mAQasa',
+    'https://www.figma.com/file/NlfVhYygR9mAQasa'
   );
 
   useEffect(() => {

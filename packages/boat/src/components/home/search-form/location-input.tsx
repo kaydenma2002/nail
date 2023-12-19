@@ -30,7 +30,7 @@ const LocationInput = forwardRef<HTMLInputElement, LocationInputType>(
         </label>
       </div>
     );
-  },
+  }
 );
 
 LocationInput.displayName = 'LocationInput';

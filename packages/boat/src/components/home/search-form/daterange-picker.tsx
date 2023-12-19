@@ -28,7 +28,7 @@ export default function DatePickerInput({
       ) : null}
       <label
         className={clsx(
-          'pointer-events-none absolute left-[60px] top-4 origin-[0] -translate-y-2 scale-90 transform text-gray-dark duration-300 xl:text-base 3xl:text-lg',
+          'pointer-events-none absolute left-[60px] top-4 origin-[0] -translate-y-2 scale-90 transform text-gray-dark duration-300 xl:text-base 3xl:text-lg'
         )}
       >
         {label}
@@ -37,7 +37,7 @@ export default function DatePickerInput({
         className={clsx(
           'block w-full appearance-none rounded-lg border border-gray-300 bg-transparent px-2.5 pb-2 pl-[60px] pt-6 text-sm font-semibold text-gray-dark transition duration-200 focus:outline-none focus:ring-0 md:pb-2.5 md:pt-6 md:text-base lg:rounded-xl 3xl:pb-3 3xl:pt-7 3xl:text-lg',
           props.className,
-          state && '!border-gray-1000 !ring-[1px] !ring-gray-900/20',
+          state && '!border-gray-1000 !ring-[1px] !ring-gray-900/20'
         )}
         onFocus={(e) => e.target.blur()}
         onCalendarOpen={() => setState(true)}

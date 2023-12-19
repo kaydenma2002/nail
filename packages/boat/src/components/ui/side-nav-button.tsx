@@ -15,7 +15,7 @@ export default function SideNavButton({ className }: { className?: string }) {
       size="sm"
       className={clsx(
         'hidden !w-6 -translate-x-1 !p-0 focus:!ring-0 md:block md:!w-7 2xl:-mt-1 2xl:!w-8',
-        className,
+        className
       )}
       onClick={() =>
         setDrawerState({

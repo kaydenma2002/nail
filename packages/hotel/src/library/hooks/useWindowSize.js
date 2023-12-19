@@ -8,7 +8,7 @@ const useWindowSize = () => {
       width: isClient ? window.innerWidth : undefined,
       height: isClient ? window.innerHeight : undefined,
     }),
-    [isClient],
+    [isClient]
   );
 
   const [size, setSize] = React.useState(getSize);

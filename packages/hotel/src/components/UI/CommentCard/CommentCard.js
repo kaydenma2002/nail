@@ -38,7 +38,7 @@ export default class App extends React.Component {
                   <Popover
                     placement="bottom"
                     content={moment(commentDate).format(
-                      'dddd, MMMM Do YYYY, h:mm:ss a',
+                      'dddd, MMMM Do YYYY, h:mm:ss a'
                     )}
                   >
                     <span>Reviewd - {moment(postTime).fromNow()}</span>

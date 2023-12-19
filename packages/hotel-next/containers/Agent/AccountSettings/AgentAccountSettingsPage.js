@@ -14,10 +14,10 @@ import AccountSettingWrapper, {
 } from './AccountSettings.style';
 
 const AgentCreateOrUpdateForm = dynamic(() =>
-  import('./AgentCreateOrUpdateForm'),
+  import('./AgentCreateOrUpdateForm')
 );
 const AgentPictureChangeForm = dynamic(() =>
-  import('./AgentPictureChangeForm'),
+  import('./AgentPictureChangeForm')
 );
 const ChangePassWord = dynamic(() => import('./ChangePassWordForm'));
 

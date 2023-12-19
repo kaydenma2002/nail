@@ -5,7 +5,7 @@ export function getDaysInMonth(
   month: number,
   year: number,
   normal?: boolean,
-  sameDay?: boolean,
+  sameDay?: boolean
 ): {
   currentMonth: string;
   currentData: any[];

@@ -227,7 +227,7 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
       helperClassName,
       ...props
     },
-    ref,
+    ref
   ) => {
     const variantStyle = switchClasses.variant[variant];
     return (
@@ -240,7 +240,7 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
               outlineInactiveSwitchKnob.color[color],
               disabled && outlineInactiveSwitchKnob.disabled,
             ],
-            handlerClassName,
+            handlerClassName
           )}
         >
           <input
@@ -249,7 +249,7 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
             disabled={disabled}
             className={clsx(
               'peer/switch absolute -z-[1] opacity-0 [&:checked:enabled~span>.aegon-switch-knob>.aegon-switch-off-icon]:hidden [&:checked:enabled~span>.aegon-switch-knob>.aegon-switch-on-icon]:opacity-100 [&:checked:enabled~span>.aegon-switch-knob]:bg-white [&:checked:enabled~span>.aegon-switch-knob]:text-gray-900',
-              handleClasses.translate.active[size],
+              handleClasses.translate.active[size]
             )}
             {...props}
           />
@@ -262,7 +262,7 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
               variantStyle.color[color],
               switchActiveClasses.color[color],
               disabled && switchClasses.disabled,
-              switchClassName,
+              switchClassName
             )}
           >
             <span
@@ -275,7 +275,7 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
                 handleClasses.translate.inactive,
                 variant === 'active' && 'text-white',
                 variant === 'flat' && '!bg-white text-gray-900 shadow-sm',
-                variant === 'outline' && 'bg-gray-300 text-gray-900',
+                variant === 'outline' && 'bg-gray-300 text-gray-900'
               )}
             >
               <span className="aegon-switch-off-icon inline-flex items-center">
@@ -309,7 +309,7 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
                 labelClasses.margin[labelPlacement][size],
                 disabled ? 'cursor-not-allowed' : 'cursor-pointer',
                 labelPlacement === 'right' && 'order-last',
-                labelClassName,
+                labelClassName
               )}
             >
               {label}
@@ -326,7 +326,7 @@ const Switch = forwardRef<HTMLInputElement, SwitchProps>(
         )}
       </div>
     );
-  },
+  }
 );
 
 Switch.displayName = 'Switch';

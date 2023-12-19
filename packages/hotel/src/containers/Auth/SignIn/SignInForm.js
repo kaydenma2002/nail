@@ -9,7 +9,7 @@ import { FORGET_PASSWORD_PAGE } from 'settings/constant';
 import { FieldWrapper, SwitchWrapper, Label } from '../Auth.style';
 import axios from '../../../config/axios';
 import SignIn from './SignIn';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 export default function SignInForm() {
   const { signIn, loggedIn } = useContext(AuthContext);
@@ -26,13 +26,12 @@ export default function SignInForm() {
         password: data.password,
       })
       .then((res) => {
-        console.log(res)
+        console.log(res);
         signIn(res);
         Swal.fire({
-          title: "Welcome back ",
-          icon: "success"
+          title: 'Welcome back ',
+          icon: 'success',
         });
-        
       })
       .catch((err) => {
         console.log(err);

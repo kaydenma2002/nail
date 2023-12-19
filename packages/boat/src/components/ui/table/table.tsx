@@ -64,7 +64,7 @@ export default function Table({
         classes.tCell,
         classes.variants[variant],
         striped && classes.striped,
-        className,
+        className
       )}
       emptyText={emptyText ? emptyText : <Empty />}
       {...props}

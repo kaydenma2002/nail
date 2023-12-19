@@ -29,7 +29,7 @@ const AdvancedRadio = forwardRef<HTMLInputElement, AdvancedRadioProps>(
       />
       <span className={clsx('block', className)}>{children}</span>
     </label>
-  ),
+  )
 );
 
 AdvancedRadio.displayName = 'AdvancedRadio';

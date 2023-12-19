@@ -31,7 +31,7 @@ export function CardComponent(props) {
           hour: 'numeric',
           minute: 'numeric',
           hour12: false,
-        }),
+        })
       );
 
       setTimeList(formattedTimes);

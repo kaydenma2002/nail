@@ -24,7 +24,7 @@ export default function CheckboxGroup({
           tag="span"
           className={clsx(
             'block text-base font-bold capitalize text-gray-dark',
-            labelClassName,
+            labelClassName
           )}
         >
           {label}

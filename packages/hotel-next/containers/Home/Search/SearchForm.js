@@ -132,7 +132,7 @@ const SearchForm = () => {
         pathname: `${LISTING_POSTS_PAGE}`,
         query: query,
       },
-      { shallow: true },
+      { shallow: true }
     );
   };
 

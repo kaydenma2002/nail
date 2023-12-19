@@ -52,7 +52,7 @@ export default function InboxPage() {
           className={clsx(
             'absolute inset-0 z-10 opacity-100 transition-all duration-500 md:static',
             toggler &&
-              'translate-y-full opacity-50 md:translate-y-0 md:opacity-100',
+              'translate-y-full opacity-50 md:translate-y-0 md:opacity-100'
           )}
           activeChatClassName="bg-white"
           currentChat={currentChat}
